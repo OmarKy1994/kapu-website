@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { getSiteDict, getLocations } from "@/lib/content";
 import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { pageAlternates } from "@/lib/seo";

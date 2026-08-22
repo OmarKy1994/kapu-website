@@ -1,4 +1,4 @@
-﻿﻿import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 
 /**
  * BEAT 1 — the true full-bleed hero the Creative Reset calls for: one

@@ -1,4 +1,4 @@
-﻿import type { Locale } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 import type { SiteDict } from "@/lib/content";
 import type { LocationData } from "@/lib/types";
 import OrderButtons from "@/components/order/OrderButtons";

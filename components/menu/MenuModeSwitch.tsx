@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 /**
  * The café/bar switch, styled after flipping a physical two-sided café sign
