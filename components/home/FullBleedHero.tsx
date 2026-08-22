@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import type { ReactNode } from "react";
 
 /**
@@ -47,22 +47,22 @@ export default function FullBleedHero({
       <div
         className="absolute inset-0"
         style={{
-          // Phase M fix: this was originally built with color-mix(in srgb,
-          // var(--kapu-charcoal) X%, transparent), which computes to the CSS
-          // Color 4 `color(srgb r g b / alpha)` function. Confirmed live on
-          // the redeployed Netlify site (isolated by swapping this one rule
-          // in the live DOM via devtools): Chrome paints a gradient that
-          // mixes a `color(srgb ...)` stop with the literal `transparent`
-          // keyword as fully OPAQUE across the whole element, not
-          // interpolating the alpha channel at all — the entire hero
-          // rendered as a solid black band, completely hiding the photo and
-          // making the section look broken rather than just having a scrim.
-          // Same visual values (--kapu-charcoal is #0f1015 = rgb(15,16,21)),
-          // expressed as plain rgba() instead of color-mix(): plain rgba()
-          // stops interpolate correctly with `transparent` in this browser,
-          // and the fix was verified live before being applied here.
+          // Phase M fix (revised): the real trigger isn't color-mix()
+          // specifically — it's the literal `transparent` keyword appearing
+          // as a color-stop alongside non-keyword stops (rgba() or
+          // color(srgb ...)) in a multi-stop gradient. Confirmed live on the
+          // redeployed Netlify site by toggling this exact rule in the live
+          // DOM: a first attempt that swapped color-mix() for rgba() but
+          // still ended the gradient on the bare `transparent` keyword still
+          // painted fully OPAQUE, hiding the photo entirely. Replacing that
+          // keyword with the equivalent explicit rgba(15, 16, 21, 0) — same
+          // color, alpha 0 spelled out instead of the keyword — was verified
+          // live to interpolate correctly and reveal the photo, and is the
+          // fix actually applied here. See also the day/night transition
+          // gradient in app/[locale]/page.tsx, which was re-checked against
+          // this same root cause.
           background:
-            "linear-gradient(to top, rgba(15, 16, 21, 0.9) 0%, rgba(15, 16, 21, 0.58) 34%, transparent 64%)",
+            "linear-gradient(to top, rgba(15, 16, 21, 0.9) 0%, rgba(15, 16, 21, 0.58) 34%, rgba(15, 16, 21, 0) 64%)",
         }}
       />
       <div className="relative z-10 w-full px-5 pb-14 pt-32 md:px-12 md:pb-20 lg:px-16">
