@@ -59,7 +59,14 @@ export default function FullBleedHero({
         priority
         sizes="100vw"
         quality={90}
-        style={{ objectFit: "cover", objectPosition: "50% 18%" }}
+        // Mobile crop confirmed live: at mobile widths this photo can only
+        // show ~30% of its width at once (object-fit: cover has to scale to
+        // the tall, narrow viewport height), so the centered 50% position
+        // that works on desktop lands on the two staff in the middle and
+        // crops both owners at the outer edges. Re-aimed to 82% on small
+        // screens so the crop includes an owner instead of only staff,
+        // confirmed via a live mobile-viewport check. Desktop is unchanged.
+        className="object-cover object-[82%_18%] md:object-[50%_18%]"
       />
       <div
         className="absolute inset-0"
