@@ -34,7 +34,24 @@ export default function FullBleedHero({
   children: ReactNode;
 }) {
   return (
-    <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden" style={{ backgroundColor: "var(--kapu-charcoal)" }}>
+    <section
+      className="relative flex min-h-[100svh] w-full items-end overflow-hidden"
+      style={{
+        backgroundColor: "var(--kapu-charcoal)",
+        // Phase M fix, part 2: the gradient CSS itself was never the bug —
+        // re-verified live that rgba(...,0) still painted the hero fully
+        // opaque on a genuinely fresh page load (no scroll, no JS touch),
+        // and stayed that way indefinitely, only correcting the instant
+        // any repaint was forced (e.g. a scroll). That's a first-paint
+        // compositing race between this section's dark fallback background
+        // and its absolutely-positioned Image/scrim children, not a
+        // gradient-syntax issue. Promoting the section to its own
+        // GPU-composited layer up front (a standard, inert fix for this
+        // exact class of bug) forces the browser to composite the whole
+        // subtree together from the first frame instead of racing it.
+        transform: "translateZ(0)",
+      }}
+    >
       <Image
         src={src}
         alt={alt}
