@@ -1,0 +1,38 @@
+{
+  "slug": "kallithea",
+  "name": "KAPU Kallithea",
+  "neighborhood": { "en": "Kallithea, Athens", "el": "Καλλιθέα, Αθήνα" },
+  "address": "Menelaou 110, Kallithea 17676",
+  "phone": "+30 210 9584025",
+  "phoneDisplay": "210 9584025",
+  "hours": {
+    "en": "Mon–Sun 07:00–20:00",
+    "el": "Δευ–Κυρ 07:00–20:00"
+  },
+  "coordinates": null,
+  "coordinatesNote": "Not verified — do not hardcode lat/lng. Directions/map links are address-based (mapsQuery) until exact coordinates are confirmed via Google Maps directly.",
+  "mapsQuery": "KAPU, Menelaou 110, Kallithea 17676, Greece",
+  "orderingLinks": {
+    "wolt": { "url": "https://wolt.com/en/grc/athens/restaurant/kapu-ath", "verified": true },
+    "efood": { "url": "https://www.e-food.gr/delivery/kallithea/kapu-7833365", "verified": false, "note": "Listing found but hours/menu content could not be extracted during research — confirm before publishing." },
+    "box": { "url": "https://box.gr/delivery/kallithea/kapu-kallithea", "verified": true }
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/kapu.kallithea/",
+    "facebook": "https://www.facebook.com/kapukallithea/",
+    "tiktok": { "handle": "kapu.kallithea", "verified": false, "note": "TikTok icon appears alongside this handle on KAPU's printed menu; not independently confirmed live." }
+  },
+  "barProgram": "unconfirmed",
+  "barProgramNote": {
+    "en": "Unconfirmed. Kallithea's own Instagram bio mentions only \"Fresh brew & snacks,\" with no cocktail/bar language — unlike Kypseli, which is independently confirmed as a cocktail bar. Do not claim Kallithea shares Kypseli's evening bar program until the client confirms.",
+    "el": "Μη επιβεβαιωμένο. Το bio του Instagram της Καλλιθέας αναφέρει μόνο \"Fresh brew & snacks\", χωρίς αναφορά σε cocktail/bar — σε αντίθεση με την Κυψέλη. Να μην αναφερθεί ότι η Καλλιθέα έχει το ίδιο βραδινό πρόγραμμα μέχρι επιβεβαίωση από τον πελάτη."
+  },
+  "images": {
+    "hero": null,
+    "exterior": null
+  },
+  "placeholders": [
+    { "id": "kallithea-hero", "subject": { "en": "Kallithea interior — equivalent counter/space shot", "el": "Εσωτερικό Καλλιθέας — αντίστοιχη λήψη πάγκου/χώρου" }, "aspect": "21:9", "priority": "P0" },
+    { "id": "kallithea-exterior", "subject": { "en": "Kallithea storefront / signage, daylight", "el": "Πρόσοψη / ταμπέλα Καλλιθέας, φως ημέρας" }, "aspect": "3:2", "priority": "P0" }
+  ]
+}

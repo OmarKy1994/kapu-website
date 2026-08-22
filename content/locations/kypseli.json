@@ -1,0 +1,38 @@
+{
+  "slug": "kypseli",
+  "name": "KAPU Kypseli",
+  "neighborhood": { "en": "Kypseli, Athens", "el": "Κυψέλη, Αθήνα" },
+  "address": "Zakinthou 9, Athens 11361",
+  "phone": "+30 211 0134307",
+  "phoneDisplay": "211 0134307",
+  "hours": {
+    "en": "Mon–Sun 07:00–21:00",
+    "el": "Δευ–Κυρ 07:00–21:00"
+  },
+  "coordinates": null,
+  "coordinatesNote": "Not verified — do not hardcode lat/lng. Directions/map links are address-based (mapsQuery) until exact coordinates are confirmed via Google Maps directly.",
+  "mapsQuery": "KAPU, Zakinthou 9, Athens 11361, Greece",
+  "orderingLinks": {
+    "wolt": { "url": "https://wolt.com/el/grc/athens/restaurant/kapu-athens", "verified": true },
+    "efood": { "url": "https://www.e-food.gr/delivery/kypseli/kapu", "verified": true },
+    "box": { "url": "https://box.gr/delivery/kipseli/kapu", "verified": true }
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/kapu.kypseli/",
+    "facebook": "https://www.facebook.com/kapu.kypseli/",
+    "tiktok": { "handle": "kapu.kypseli", "verified": false, "note": "TikTok icon appears alongside this handle on KAPU's printed menu; not independently confirmed live." }
+  },
+  "barProgram": true,
+  "barProgramNote": {
+    "en": "Confirmed evening cocktail bar — Tripadvisor categorizes this location as a Cafe-Cocktail Bar, and its own signature cocktails are photographed and merchandised here.",
+    "el": "Επιβεβαιωμένο βραδινό cocktail bar — το Tripadvisor κατατάσσει αυτό το κατάστημα ως Cafe-Cocktail Bar."
+  },
+  "images": {
+    "hero": "/images/locations/kypseli-hero-mural.jpg",
+    "exterior": "/images/locations/kypseli-exterior.jpg"
+  },
+  "placeholders": [
+    { "id": "kypseli-hero", "subject": { "en": "Kypseli interior — bar counter, greenery, wall sign", "el": "Εσωτερικό Κυψέλης — πάγκος bar, πράσινο, ταμπέλα τοίχου" }, "aspect": "21:9", "priority": "P0" },
+    { "id": "kypseli-exterior", "subject": { "en": "Kypseli storefront / signage, daylight", "el": "Πρόσοψη / ταμπέλα Κυψέλης, φως ημέρας" }, "aspect": "3:2", "priority": "P0" }
+  ]
+}

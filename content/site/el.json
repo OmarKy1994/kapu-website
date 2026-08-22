@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "siteName": "KAPU",
+    "titleSuffix": "KAPU — Αθήνα",
+    "defaultDescription": "Το KAPU είναι μια γειτονιά καφέ και cocktail bar στην Κυψέλη και την Καλλιθέα — καφές και ζαχαροπλαστείο τη μέρα, cocktails με tiki πινελιά το βράδυ."
+  },
+  "nav": {
+    "menu": "Μενού",
+    "findYourKapu": "Βρες το KAPU σου",
+    "order": "Παράγγειλε",
+    "story": "Ιστορία",
+    "skipToContent": "Μετάβαση στο περιεχόμενο",
+    "languageSwitchLabel": "Switch to English",
+    "openMenu": "Άνοιγμα μενού",
+    "closeMenu": "Κλείσιμο μενού",
+    "backToTop": "Επιστροφή στην κορυφή",
+    "goToHomepage": "Μετάβαση στην αρχική σελίδα"
+  },
+  "home": {
+    "heroKicker": "KAPU · Κυψέλη & Καλλιθέα, Αθήνα",
+    "heroPhraseEl": "Πάμε #kapu να τα πούμε;",
+    "heroPhraseTranslation": "Come through, let's catch up.",
+    "heroSub": "Μία γωνιά της γειτονιάς. Καφές τη μέρα, cocktails το βράδυ — ίδιος χώρος, άλλο φως.",
+    "dayEyebrow": "Τη μέρα",
+    "dayHeading": "Καφές, γλυκό και γειτονιά",
+    "dayBody": "Φρέσκος καφές, soft cookies, σάντουιτς και γλυκά — το KAPU που ανοίγει τη μέρα, με μέντα στους τοίχους και φως από τη βουκαμβίλια.",
+    "menuPreviewCta": "Δες το μενού καφέ",
+    "locationsEyebrow": "Δύο γωνιές, ένα KAPU",
+    "locationsHeading": "Βρες το KAPU σου",
+    "locationsBody": "Η Κυψέλη και η Καλλιθέα είναι δύο πραγματικά μαγαζιά, όχι δύο αντίγραφα της ίδιας σελίδας.",
+    "transitionLabel": "Καθώς αλλάζει το φως —",
+    "nightEyebrow": "Το βράδυ",
+    "nightHeading": "Το KAPU δεν είναι μόνο καφές",
+    "nightBody": "Ποτήρια tiki, signature cocktails φτιαγμένα από την ομάδα του KAPU, και ένας χώρος που γίνεται λίγο πιο οικείος όταν πέφτει ο ήλιος.",
+    "cocktailsCta": "Δες το μενού bar",
+    "orderEyebrow": "Έτοιμοι όποτε είσαι κι εσύ",
+    "orderHeading": "Παράγγειλε online",
+    "orderBody": "Το KAPU παραδίδει μέσω Wolt και efood, και Box όπου έχει επιβεβαιωθεί — διάλεξε πλατφόρμα.",
+    "finalVisitHeading": "Πάμε",
+    "finalVisitBody": "Δύο γωνιές της Αθήνας, ένα KAPU. Βρες διαδρομή, ωράριο, και έναν τρόπο να πεις γεια."
+  },
+  "menu": {
+    "heading": "Μενού",
+    "sub": "Το ίδιο μενού που θα έβρισκες στον πάγκο — με τιμές, κατηγορίες, ενημερωμένο.",
+    "modeCafe": "Café",
+    "modeBar": "Bar",
+    "modeSwitchLabel": "Επίλεξε μενού café ή bar",
+    "popularTag": "Δημοφιλές",
+    "veganTag": "Vegan",
+    "adultsOnlyTag": "18+",
+    "abvLabel": "Αλκοόλ",
+    "sourceNoteCafe": "Από το επίσημο takeaway μενού του KAPU.",
+    "sourceNoteBar": "Το μενού bar προέρχεται από τη λίστα προϊόντων που έδωσε το KAPU· να επιβεβαιωθούν οι τιμές με τη ζωντανή καταχώρηση σε Wolt/efood πριν τη δημοσίευση.",
+    "jumpToCategory": "Μετάβαση σε κατηγορία"
+  },
+  "locations": {
+    "heading": "Βρες το KAPU σου",
+    "sub": "Δύο γειτονιές, δύο χώροι, ένα KAPU.",
+    "addressLabel": "Διεύθυνση",
+    "phoneLabel": "Τηλέφωνο",
+    "hoursLabel": "Ωράριο",
+    "mapLabel": "Χάρτης",
+    "openInGoogleMaps": "Άνοιγμα στους Χάρτες Google",
+    "directionsCta": "Οδηγίες",
+    "callCta": "Κλήση",
+    "orderHeading": "Παράγγειλε από εδώ",
+    "socialHeading": "Ακολούθησε αυτό το KAPU",
+    "barProgramConfirmed": "Βραδινό cocktail bar",
+    "barProgramUnconfirmed": "Βραδινό πρόγραμμα bar: μη επιβεβαιωμένο για αυτό το κατάστημα",
+    "barProgramNone": "Μόνο café — χωρίς βραδινό πρόγραμμα bar",
+    "backToLocations": "Όλα τα καταστήματα",
+    "viewLocation": "Δες αυτό το KAPU"
+  },
+  "order": {
+    "heading": "Παράγγειλε online",
+    "sub": "Το KAPU δεν δέχεται παραγγελίες απευθείας από αυτή τη σελίδα — διάλεξε πλατφόρμα παρακάτω.",
+    "wolt": "Παράγγειλε στο Wolt",
+    "efood": "Παράγγειλε στο efood",
+    "box": "Παράγγειλε στο Box",
+    "unverified": "μη επιβεβαιωμένη καταχώρηση — να ελεγχθεί πριν τη δημοσίευση",
+    "chooseLocation": "Διάλεξε το KAPU σου",
+    "choosePlatform": "Διάλεξε πλατφόρμα",
+    "back": "Πίσω",
+    "close": "Κλείσιμο"
+  },
+  "story": {
+    "heading": "KAPU",
+    "body": "Μια γειτονιά για καφέ, φαγητό, ποτό και καλή παρέα.",
+    "pending": "Η πλήρης ιστορία του KAPU έρχεται σύντομα — αυτή η σελίδα θα μεγαλώσει μόλις οι άνθρωποι πίσω από το KAPU τη μοιραστούν."
+  },
+  "footer": {
+    "tagline": "Πάμε #kapu να τα πούμε;",
+    "locationsHeading": "Καταστήματα",
+    "menuHeading": "Μενού",
+    "followHeading": "Ακολούθησέ μας",
+    "rights": "KAPU. Με επιφύλαξη παντός δικαιώματος.",
+    "designedBy": "Σχεδιασμός από"
+  },
+  "placeholder": {
+    "labelPrefix": "Φωτογραφία σύντομα",
+    "temporary": "Προσωρινό — εκκρεμεί πραγματική φωτογραφία"
+  }
+}

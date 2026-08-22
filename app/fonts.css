@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Self-hosted fonts (via @fontsource), not next/font/google.
+
+   This sandbox's build has no outbound access to fonts.googleapis.com, and
+   more importantly self-hosting avoids a runtime dependency on Google's
+   font CDN in production too — one less external request, no render-blocking
+   cross-origin font fetch, and the exact same result offline or online.
+
+   Poppins  — approved body/UI face. Latin only (confirmed: Poppins ships as
+              a "Devanagari + Latin" family, no Greek glyphs at all) — used
+              for /en body copy only.
+   Inter    — Greek+Latin+Cyrillic+Vietnamese coverage confirmed — substitutes
+              for Poppins as the /el body face, since Poppins can't render
+              Greek.
+
+   Sriracha / Comfortaa — the DISPLAY face pair. Phase D had landed on
+              Pacifico for /en; Phase E's QA pass put Pacifico's actual
+              rendered letterforms ("Coffee", "Sandwiches", ...) side by side
+              with the real PDF crop and it reads as the generic
+              beach-cafe/tiki script every second coffee-shop site already
+              uses — round, bubbly, uniform stroke weight — while the PDF's
+              real lettering is thinner, looser, more of a single-weight
+              brush-marker signature. Re-tested seven candidates
+              (Caveat, Sriracha, Shadows Into Light, Homemade Apple, Reenie
+              Beanie, Permanent Marker, Kalam) rendered together against the
+              same PDF crop. Sriracha was the closest structural match — the
+              same joined, single-weight brush-cursive letter connections
+              (the "ff" ligature in particular) — so it replaces Pacifico.
+              Majesty itself remains unavailable (Canva-exclusive, no
+              redistributable webfont, unconfirmed Greek coverage), and — now
+              checked against 45+ script/handwriting candidates across two
+              phases (Pacifico, Sriracha, Yellowtail, Grand Hotel, Kaushan
+              Script, Caveat, Dancing Script, Great Vibes — whose only
+              "greek" file is actually the polytonic greek-ext block, not
+              base modern Greek — Shadows Into Light, Homemade Apple, Reenie
+              Beanie, Permanent Marker, Kalam, and more) — no genuine
+              script/handwriting Google Font has real Greek glyph coverage.
+              Comfortaa remains the Greek pairing: the one rounded, bold,
+              non-classical face that does carry a real greek-*.css subset.
+              Honest caveat, carried into the visual QA report rather than
+              hidden: side by side, "Sweet Snacks" (Sriracha) and "ΓΛΥΚΑ"
+              (Comfortaa) do NOT read as literally the same typeface — no
+              available option does — so the two locales lean on shared
+              color, weight, size and surrounding motifs (WobbleDivider,
+              floral crops) to still read as one brand. Swap this import
+              block for the real Majesty webfont (once licensed, with
+              confirmed Greek coverage) — nothing else in the codebase needs
+              to change.
+
+   PHASE I — the real Majesty font. The user supplied the actual file
+              (`Majesty Regular.ttf`, by YandiDesigns) in the project folder
+              this phase, self-hosted below from `public/fonts/majesty/` via
+              a plain @font-face rule rather than @fontsource (there is no
+              @fontsource package for a privately-supplied font). Verified
+              in fontTools: family "Majesty", a single Regular (400) weight
+              only — no bold/italic exists in this file, so any bold-weight
+              display usage needs a different lever (letter-spacing, size,
+              color) rather than a heavier Majesty weight. Verified its
+              cmap: zero glyphs in the Greek Unicode block (U+0370–U+03FF) —
+              confirms the brief's own caution that it likely lacks Greek
+              coverage. Rendered in an isolated test page before wiring it
+              into the site (not just "the file loads") — it displays as a
+              confident, slightly irregular brush-marker script, distinctly
+              more expressive than either retired stand-in below.
+
+              HONEST LICENSING FLAG, carried into the Phase I implementation
+              report: Majesty is a commercial font sold on Creative Fabrica,
+              Envato Elements, Creative Market, and FontBundles, all under
+              YandiDesigns — the file's own filename pattern
+              (`majesty-2981154.zip`, a numeric ID) matches free-font
+              "mirror" aggregator sites that redistribute paid marketplace
+              fonts without authorization, and the zip contains no license
+              or EULA text. This build self-hosts the exact file supplied,
+              per the brief's explicit instruction — but a Canva Pro
+              in-app font license (Majesty is in Canva's Pro catalog, per
+              Important Notes.txt) typically only covers using the font
+              *inside Canva-generated designs*, not extracting the raw TTF
+              and self-hosting it on an external website. Before this ships
+              to production, verify a commercial webfont license actually
+              covers this use — a direct Creative Fabrica purchase/license
+              is the most likely legitimate path if the Canva license
+              doesn't extend this far.
+
+              Sriracha (Phase F/G) and Alex Brush (Phase H's disclosed
+              stand-in) are retired now that the real font is available —
+              imports removed rather than left dormant, since the brief is
+              explicit neither should remain in play.
+   ========================================================================== */
+
+/* Poppins — Latin, UI weights */
+@import "@fontsource/poppins/latin-400.css";
+@import "@fontsource/poppins/latin-500.css";
+@import "@fontsource/poppins/latin-600.css";
+@import "@fontsource/poppins/latin-700.css";
+
+/* Inter — Latin + Greek, UI weights */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+@import "@fontsource/inter/greek-400.css";
+@import "@fontsource/inter/greek-500.css";
+@import "@fontsource/inter/greek-600.css";
+@import "@fontsource/inter/greek-700.css";
+
+/* Majesty — the real supplied file, self-hosted directly (no @fontsource
+   package exists for a privately-supplied font). Single Regular weight;
+   Latin only (no Greek glyphs — verified via cmap inspection, see above),
+   so (per the lang="el" override below) it never reaches Greek text. */
+@font-face {
+  font-family: "Majesty";
+  src: url("/fonts/majesty/Majesty-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Comfortaa — Latin + Greek, display face for /el */
+@import "@fontsource/comfortaa/latin-700.css";
+@import "@fontsource/comfortaa/greek-700.css";
+@import "@fontsource/comfortaa/latin-500.css";
+@import "@fontsource/comfortaa/greek-500.css";

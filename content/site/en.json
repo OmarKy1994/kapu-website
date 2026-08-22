@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "siteName": "KAPU",
+    "titleSuffix": "KAPU — Athens",
+    "defaultDescription": "KAPU is a neighborhood café and cocktail bar in Kypseli and Kallithea, Athens — coffee and bakery by day, tiki-influenced cocktails by night."
+  },
+  "nav": {
+    "menu": "Menu",
+    "findYourKapu": "Find Your KAPU",
+    "order": "Order",
+    "story": "Story",
+    "skipToContent": "Skip to content",
+    "languageSwitchLabel": "Switch to Greek",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToTop": "Back to top",
+    "goToHomepage": "Go to homepage"
+  },
+  "home": {
+    "heroKicker": "KAPU · Kypseli & Kallithea, Athens",
+    "heroPhraseEl": "Πάμε #kapu να τα πούμε;",
+    "heroPhraseTranslation": "Come through, let's catch up.",
+    "heroSub": "One neighborhood corner. Coffee by day, cocktails after dark — same place, different light.",
+    "dayEyebrow": "By day",
+    "dayHeading": "Coffee, pastry, and the neighborhood",
+    "dayBody": "Fresh brew, soft cookies, sandwiches and sweets — the KAPU that opens the day, mint walls and bougainvillea light.",
+    "menuPreviewCta": "See the café menu",
+    "locationsEyebrow": "Two corners, one KAPU",
+    "locationsHeading": "Find Your KAPU",
+    "locationsBody": "Kypseli and Kallithea are two real places, not two copies of the same page.",
+    "transitionLabel": "As the light changes —",
+    "nightEyebrow": "After dark",
+    "nightHeading": "KAPU isn't only coffee",
+    "nightBody": "Tiki glassware, signature cocktails invented in-house, and a room that gets a little more intimate once the sun goes down.",
+    "cocktailsCta": "See the bar menu",
+    "orderEyebrow": "Ready when you are",
+    "orderHeading": "Order online",
+    "orderBody": "KAPU delivers through Wolt and efood, and Box where confirmed — pick your platform.",
+    "finalVisitHeading": "Come through",
+    "finalVisitBody": "Two corners of Athens, one KAPU. Find directions, hours, and a way to say hi."
+  },
+  "menu": {
+    "heading": "Menu",
+    "sub": "The same menu you'd get at the counter — priced, categorized, and kept up to date.",
+    "modeCafe": "Café",
+    "modeBar": "Bar",
+    "modeSwitchLabel": "Choose café or bar menu",
+    "popularTag": "Popular",
+    "veganTag": "Vegan",
+    "adultsOnlyTag": "18+",
+    "abvLabel": "ABV",
+    "sourceNoteCafe": "Sourced from KAPU's official takeaway menu.",
+    "sourceNoteBar": "Bar menu content is drawn from KAPU's own supplied product list; re-confirm pricing against the live Wolt/efood bar listing before publishing.",
+    "jumpToCategory": "Jump to category"
+  },
+  "locations": {
+    "heading": "Find Your KAPU",
+    "sub": "Two neighborhoods, two rooms, one KAPU.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "hoursLabel": "Hours",
+    "mapLabel": "Map",
+    "openInGoogleMaps": "Open in Google Maps",
+    "directionsCta": "Get directions",
+    "callCta": "Call",
+    "orderHeading": "Order from here",
+    "socialHeading": "Follow this KAPU",
+    "barProgramConfirmed": "Evening cocktail bar",
+    "barProgramUnconfirmed": "Evening bar program: unconfirmed for this location",
+    "barProgramNone": "Café only — no evening bar program",
+    "backToLocations": "All locations",
+    "viewLocation": "View this KAPU"
+  },
+  "order": {
+    "heading": "Order online",
+    "sub": "KAPU doesn't take orders on this site directly — pick a platform below.",
+    "wolt": "Order on Wolt",
+    "efood": "Order on efood",
+    "box": "Order on Box",
+    "unverified": "listing unverified — confirm before publishing",
+    "chooseLocation": "Choose your KAPU",
+    "choosePlatform": "Choose a platform",
+    "back": "Back",
+    "close": "Close"
+  },
+  "story": {
+    "heading": "KAPU",
+    "body": "A neighborhood place for coffee, food, drinks and good company.",
+    "pending": "The full KAPU story is coming soon — this page will grow once the people behind KAPU share it."
+  },
+  "footer": {
+    "tagline": "Πάμε #kapu να τα πούμε;",
+    "locationsHeading": "Locations",
+    "menuHeading": "Menu",
+    "followHeading": "Follow",
+    "rights": "KAPU. All rights reserved.",
+    "designedBy": "Designed by"
+  },
+  "placeholder": {
+    "labelPrefix": "Photo coming soon",
+    "temporary": "Placeholder — real photography pending"
+  }
+}

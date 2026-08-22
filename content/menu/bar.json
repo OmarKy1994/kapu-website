@@ -1,0 +1,122 @@
+{
+  "mode": "bar",
+  "sourceNote": "Sourced from KAPU's own supplied product list, not an independently-fetched bar-specific PDF. Re-confirm pricing and exact bottle-pack wording against the live Wolt/efood bar listing before publishing.",
+  "categories": [
+    {
+      "id": "signature-cocktails",
+      "name": { "en": "Signature Cocktails", "el": "Signature Cocktails" },
+      "description": { "en": "Invented in-house. 35% vol.", "el": "Φτιαγμένα από την ομάδα του KAPU. 35% vol." },
+      "adultsOnly": true,
+      "featured": true,
+      "items": [
+        { "id": "moumou", "name": { "en": "Moumou", "el": "Moumou" }, "description": { "en": "White rum, Malibu, Frangelico, sugar syrup, lime, strawberry purée.", "el": "Λευκό ρούμι, Malibu, Frangelico, σιρόπι ζάχαρης, lime, πουρέ φράουλα." }, "price": "10.00", "abv": "35%", "adultsOnly": true, "image": "/images/cocktails/moumou.jpg" },
+        { "id": "teitei", "name": { "en": "Teitei", "el": "Teitei" }, "description": { "en": "Vodka, Blue Curaçao, lime, pear purée, coconut purée.", "el": "Vodka, Blue Curaçao, lime, πουρέ αχλάδι, πουρέ καρύδα." }, "price": "10.00", "abv": "35%", "adultsOnly": true, "image": "/images/cocktails/teitei.jpg" },
+        { "id": "karekau", "name": { "en": "Karekau", "el": "Karekau" }, "description": { "en": "Otto's Vermouth, triple sec, lime, yuzu purée, pineapple purée.", "el": "Otto's Vermouth, triple sec, lime, πουρέ yuzu, πουρέ ανανά." }, "price": "10.00", "abv": "35%", "adultsOnly": true, "image": "/images/cocktails/karekau.jpg" },
+        { "id": "tukituki", "name": { "en": "Tukituki", "el": "Tukituki" }, "description": { "en": "Gin, triple sec, Monin cucumber, Monin falernum, lime, tonic.", "el": "Gin, triple sec, Monin αγγούρι, Monin falernum, lime, tonic." }, "price": "10.00", "abv": "35%", "adultsOnly": true, "image": "/images/cocktails/tukituki.jpg" },
+        { "id": "pupuhi", "name": { "en": "Pupuhi", "el": "Pupuhi" }, "description": { "en": "Tequila Blanco, Aperol, triple sec, sugar syrup, lime, tangerine purée, cherry bitters.", "el": "Tequila Blanco, Aperol, triple sec, σιρόπι ζάχαρης, lime, πουρέ μανταρίνι, cherry bitters." }, "price": "10.00", "abv": "35%", "adultsOnly": true, "image": "/images/cocktails/pupuhi.jpg" }
+      ]
+    },
+    {
+      "id": "classic-cocktails",
+      "name": { "en": "Classic Cocktails", "el": "Classic Cocktails" },
+      "adultsOnly": true,
+      "items": [
+        { "id": "margarita", "name": { "en": "Margarita", "el": "Margarita" }, "price": "10.00", "adultsOnly": true, "image": "/images/cocktails/margarita.jpg" },
+        { "id": "daiquiri", "name": { "en": "Daiquiri", "el": "Daiquiri" }, "price": "10.00", "adultsOnly": true },
+        { "id": "negroni", "name": { "en": "Negroni", "el": "Negroni" }, "price": "10.00", "adultsOnly": true, "image": "/images/cocktails/negroni.jpg" },
+        { "id": "aperol-spritz", "name": { "en": "Aperol Spritz", "el": "Aperol Spritz" }, "price": "8.00", "adultsOnly": true, "image": "/images/cocktails/aperol-spritz.jpg" },
+        { "id": "zombie", "name": { "en": "Zombie", "el": "Zombie" }, "price": "10.00", "adultsOnly": true },
+        { "id": "old-fashioned", "name": { "en": "Old Fashioned", "el": "Old Fashioned" }, "price": "10.00", "adultsOnly": true },
+        { "id": "mai-tai", "name": { "en": "Mai Tai", "el": "Mai Tai" }, "price": "10.00", "adultsOnly": true },
+        { "id": "mojito", "name": { "en": "Mojito", "el": "Mojito" }, "price": "10.00", "adultsOnly": true, "image": "/images/cocktails/mojito.jpg" },
+        { "id": "pornstar", "name": { "en": "Pornstar Martini", "el": "Pornstar Martini" }, "price": "10.00", "adultsOnly": true }
+      ]
+    },
+    {
+      "id": "mocktails",
+      "name": { "en": "Mocktails", "el": "Mocktails" },
+      "items": [
+        { "id": "mojito-virgin", "name": { "en": "Mojito Virgin", "el": "Mojito Virgin" }, "description": { "en": "Soda, lime, sugar syrup, spearmint.", "el": "Σόδα, lime, σιρόπι ζάχαρης, δυόσμος." }, "price": "8.00" }
+      ]
+    },
+    {
+      "id": "spirits",
+      "name": { "en": "Spirits", "el": "Αποστάγματα" },
+      "adultsOnly": true,
+      "items": [
+        { "id": "gin", "name": { "en": "Gin", "el": "Gin" }, "price": "8.00", "adultsOnly": true, "image": "/images/spirits/gin.jpg" },
+        { "id": "gin-premium", "name": { "en": "Premium Gin", "el": "Premium Gin" }, "price": "10.00", "adultsOnly": true, "image": "/images/spirits/gin-premium.jpg" },
+        { "id": "vodka", "name": { "en": "Vodka", "el": "Vodka" }, "price": "8.00", "adultsOnly": true, "image": "/images/spirits/vodka.jpg" },
+        { "id": "vodka-premium", "name": { "en": "Premium Vodka", "el": "Premium Vodka" }, "price": "12.00", "adultsOnly": true, "image": "/images/spirits/vodka-premium.jpg" },
+        { "id": "rum", "name": { "en": "Rum", "el": "Ρούμι" }, "price": "8.00", "adultsOnly": true, "image": "/images/spirits/rum.jpg" },
+        { "id": "rum-premium", "name": { "en": "Premium Rum", "el": "Premium Ρούμι" }, "price": "10.00", "adultsOnly": true },
+        { "id": "whisky", "name": { "en": "Whisky", "el": "Ουίσκι" }, "price": "8.00", "adultsOnly": true, "image": "/images/spirits/whiskey.jpg" },
+        { "id": "bourbon-whisky", "name": { "en": "Bourbon Whisky", "el": "Bourbon Ουίσκι" }, "price": "10.00", "adultsOnly": true, "image": "/images/spirits/bourbon-whisky.jpg" },
+        { "id": "special-deluxe-whisky", "name": { "en": "Special Deluxe Whisky", "el": "Special Deluxe Ουίσκι" }, "price": "10.00", "adultsOnly": true },
+        { "id": "tequila", "name": { "en": "Tequila", "el": "Τεκίλα" }, "price": "8.00", "adultsOnly": true }
+      ]
+    },
+    {
+      "id": "bottle-packs",
+      "name": { "en": "Bottle Packs", "el": "Bottle Packs" },
+      "description": { "en": "0.7L, includes accompanying items as specified on KAPU's bar menu — exact wording to be verified before publishing.", "el": "0.7L, περιλαμβάνει τα συνοδευτικά όπως ορίζονται στο μενού bar του KAPU — να επιβεβαιωθεί η ακριβής διατύπωση πριν τη δημοσίευση." },
+      "adultsOnly": true,
+      "unverified": true,
+      "items": [
+        { "id": "gin-bottle", "name": { "en": "Gin Bottle", "el": "Φιάλη Gin" }, "price": "50", "adultsOnly": true },
+        { "id": "gin-bottle-premium", "name": { "en": "Premium Gin Bottle", "el": "Φιάλη Premium Gin" }, "price": "80", "adultsOnly": true },
+        { "id": "vodka-bottle", "name": { "en": "Vodka Bottle", "el": "Φιάλη Vodka" }, "price": "50", "adultsOnly": true },
+        { "id": "vodka-bottle-premium", "name": { "en": "Premium Vodka Bottle", "el": "Φιάλη Premium Vodka" }, "price": "100", "adultsOnly": true },
+        { "id": "rum-bottle", "name": { "en": "Rum Bottle", "el": "Φιάλη Ρούμι" }, "price": "50", "adultsOnly": true },
+        { "id": "rum-bottle-premium", "name": { "en": "Premium Rum Bottle", "el": "Φιάλη Premium Ρούμι" }, "price": "60", "adultsOnly": true },
+        { "id": "whisky-bottle", "name": { "en": "Whisky Bottle", "el": "Φιάλη Ουίσκι" }, "price": "50", "adultsOnly": true },
+        { "id": "whisky-bottle-deluxe", "name": { "en": "Special Deluxe Whisky Bottle", "el": "Φιάλη Special Deluxe Ουίσκι" }, "price": "80", "adultsOnly": true },
+        { "id": "tequila-bottle", "name": { "en": "Tequila Bottle", "el": "Φιάλη Τεκίλα" }, "price": "50", "adultsOnly": true }
+      ]
+    },
+    {
+      "id": "champagne",
+      "name": { "en": "Champagne", "el": "Σαμπάνια" },
+      "adultsOnly": true,
+      "items": [
+        { "id": "moet-brut-imperial", "name": { "en": "Moët & Chandon Brut Impérial", "el": "Moët & Chandon Brut Impérial" }, "price": "100", "adultsOnly": true, "image": "/images/cocktails/champagne-brut.jpg" },
+        { "id": "moet-ice-imperial", "name": { "en": "Moët & Chandon Ice Impérial", "el": "Moët & Chandon Ice Impérial" }, "price": "120", "adultsOnly": true, "image": "/images/cocktails/champagne-ice.jpg" }
+      ]
+    },
+    {
+      "id": "sparkling-wine",
+      "name": { "en": "Sparkling Wine", "el": "Αφρώδης Οίνος" },
+      "adultsOnly": true,
+      "items": [
+        { "id": "moschato-dasti-gancia", "name": { "en": "Moschato D'Asti Gancia 0.75L", "el": "Moschato D'Asti Gancia 0.75L" }, "price": "35", "adultsOnly": true },
+        { "id": "biancoNero-sparkling-white", "name": { "en": "BiancoNero Sparkling White 0.2L", "el": "BiancoNero Λευκός Αφρώδης 0.2L" }, "price": "9", "adultsOnly": true, "image": "/images/menu/sparkling-white.jpg" },
+        { "id": "biancoNero-sparkling-rose", "name": { "en": "BiancoNero Sparkling Rosé 0.2L", "el": "BiancoNero Ροζέ Αφρώδης 0.2L" }, "price": "9", "adultsOnly": true, "image": "/images/menu/sparkling-rose.jpg" }
+      ]
+    },
+    {
+      "id": "wine",
+      "name": { "en": "Wine", "el": "Κρασί" },
+      "adultsOnly": true,
+      "items": [
+        { "id": "biancoNero-red-dry", "name": { "en": "BiancoNero Red Dry 0.187L", "el": "BiancoNero Κόκκινο Ξηρό 0.187L" }, "price": "9", "adultsOnly": true, "image": "/images/menu/wine-red.jpg" },
+        { "id": "biancoNero-white-dry", "name": { "en": "BiancoNero White Dry 0.187L", "el": "BiancoNero Λευκό Ξηρό 0.187L" }, "price": "9", "adultsOnly": true, "image": "/images/menu/wine-white.jpg" }
+      ]
+    },
+    {
+      "id": "bar-soft-drinks-beers",
+      "name": { "en": "Soft Drinks / Beers", "el": "Αναψυκτικά / Μπύρες" },
+      "items": [
+        { "id": "corona-bar", "name": { "en": "Corona 0.33L", "el": "Corona 0.33L" }, "price": "5", "image": "/images/spirits/corona.jpg" },
+        { "id": "schweppes-soda-bar", "name": { "en": "Schweppes Soda 0.5L", "el": "Schweppes Soda 0.5L" }, "price": "2.50" },
+        { "id": "coca-cola-bar", "name": { "en": "Coca-Cola 0.5L", "el": "Coca-Cola 0.5L" }, "price": "2.50" },
+        { "id": "coca-cola-zero-bar", "name": { "en": "Coca-Cola Zero 0.5L", "el": "Coca-Cola Zero 0.5L" }, "price": "2.50" },
+        { "id": "water-bar", "name": { "en": "Water 0.50L", "el": "Νερό 0.50L" }, "price": "0.50" },
+        { "id": "hbh-orange-juice-1l", "name": { "en": "HBH Orange Juice 1L", "el": "HBH Χυμός Πορτοκάλι 1L" }, "price": "3" },
+        { "id": "hbh-lemon-juice-1l", "name": { "en": "HBH Lemon Juice 1L", "el": "HBH Χυμός Λεμόνι 1L" }, "price": "3" },
+        { "id": "estrella-draft-033", "name": { "en": "Estrella Barcelona Draft 0.33L", "el": "Estrella Barcelona Draft 0.33L" }, "price": "3.50" },
+        { "id": "estrella-draft-05", "name": { "en": "Estrella Barcelona Draft 0.5L", "el": "Estrella Barcelona Draft 0.5L" }, "price": "5" },
+        { "id": "sprite-bar", "name": { "en": "Sprite 0.5L", "el": "Sprite 0.5L" }, "price": "2.50" }
+      ]
+    }
+  ]
+}

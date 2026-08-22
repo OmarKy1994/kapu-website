@@ -1,0 +1,314 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* ==========================================================================
+   KAPU DESIGN TOKENS
+   Source: the real KAPU takeaway menu PDF + logo + floral asset (visual
+   refinement pass), building on KAPU_Project_Analysis.md +
+   KAPU_Creative_Direction.md.
+
+   Color roles (all 7 supplied brand colors, all kept — #3A9584 is the
+   logo's own color and is never dropped):
+     --kapu-teal        #3A9584  CTAs / prices / links / logo — functional
+     --kapu-mint        #C0E2D5  day secondary/rhythm surface — deliberate,
+                                 occasional, no longer the default canvas
+     --kapu-mint-deep   #72B5A6  day secondary surfaces / stripe accents
+     --kapu-pink        #D34179  display/expressive typography, bougainvillea,
+                                 brand-moment accents (fuchsia)
+     --kapu-charcoal    #0F1015  body text / night surfaces
+     --kapu-offwhite    #FAFAFA  inset panel background — true neutral, used
+                                 where a panel needs to read distinctly
+                                 cooler than the warm cream canvas around it
+     --kapu-green       #566D46  support tags (vegan, success)
+
+   PHASE I — Section 10 creative reset. Phase F had deliberately made mint
+   the PRIMARY/default day canvas (matching the real takeaway-menu PDF's own
+   mint-first page background) with white used only for inset panels. That
+   was the right call for print fidelity, but the Phase I brief is explicit
+   and repeated: the live site reads as "too mint-heavy," "a generic
+   mint/green café template" — competitor research this phase (see
+   claude/phase-i-creative-research.md) confirms the strongest independent
+   Athens/global references all lead with a warm or neutral base and treat
+   saturated color as a deliberate, restrained accent, not an ambient wash.
+   This is a genuine, researched reason to revisit the "unless" clause in
+   the brief's own preservation rule — so --surface flips to the warm cream
+   as the new default day canvas; mint becomes an occasional, deliberate
+   rhythm beat (one homepage section keeps it explicitly — see page.tsx)
+   rather than the section background every ModeSection gets by default.
+   --panel flips to true offwhite so panel-on-surface still reads as a
+   distinct, slightly cooler inset now that cream is the surrounding
+   canvas, not mint. Contrast was re-checked (not assumed) for every
+   existing text/background pairing against the new cream/offwhite bases —
+   every pairing that passed AA against mint clears by an even wider margin
+   against the lighter cream/offwhite (teal-deep 4.68→6.04, pink-deep
+   4.72→6.10, charcoal 13.64→17.64); nothing regresses.
+
+   Day/night is NOT a global dark-mode class. It is a section-level
+   `data-mode="day" | "night"` attribute — components read mode-scoped
+   custom properties. See ModeSection component. Night sections stay
+   genuinely charcoal (this is still "KAPU at night," not a re-skin) but
+   should be used deliberately, not back-to-back for the whole lower half
+   of a page — see homepage section order.
+   ========================================================================== */
+
+:root {
+  --kapu-teal: #3a9584;
+  --kapu-mint: #c0e2d5;
+  --kapu-mint-deep: #72b5a6;
+  --kapu-pink: #d34179;
+  --kapu-charcoal: #0f1015;
+  --kapu-offwhite: #fafafa;
+  --kapu-green: #566d46;
+
+  /* Phase F: a warmer, paper-adjacent panel tone. The real PDF's white
+     inset panels read slightly warm against the mint canvas, not clinical
+     neutral — this is a background-only shift (a few units off #fafafa),
+     verified not to move any existing text-contrast pairing below AA (see
+     the Phase F contrast audit). --kapu-offwhite itself is untouched and
+     stays available for the handful of places that want true neutral
+     (skip-link, placeholder stripes). --panel below now resolves to cream. */
+  --kapu-cream: #faf6ef;
+
+  /* Accessibility-driven derivatives (Phase E contrast audit): the raw brand
+     teal and pink are correct for large display headings, backgrounds, and
+     decorative strokes, but both fail WCAG AA for normal-size text against
+     mint/off-white (teal-on-mint 2.6:1, teal-on-offwhite 3.5:1, pink-on-mint
+     3.1:1 — all below the 4.5:1 normal-text minimum). These are the same
+     hues, darkened only enough to pass 4.5:1 on both mint and off-white,
+     used wherever the brand color carries small/body-weight text rather
+     than a large heading. Not a palette change — the raw colors stay the
+     system of record for anything not held to text-contrast rules.
+
+     Phase F: --kapu-pink-deep also now does double duty as the fill for the
+     pink CTA button variant (.kapu-button--accent) — raw pink behind white
+     text is 4.37:1, just under the 4.5:1 normal-text minimum; pink-deep
+     behind white is 6.57:1, safely clear. Same reasoning as the text case:
+     the raw hue stays correct for large/bold display use, the derivative
+     carries anything read at button-label size. */
+  --kapu-teal-deep: #28685c;
+  --kapu-pink-deep: #a4325e;
+
+  /* Default (day) mode values — read by components via var(--surface) etc.
+     --brand is the FUNCTIONAL/text color (links, prices, small UI labels),
+     so it resolves to the accessible teal-deep derivative in day mode; use
+     var(--kapu-teal) directly for decorative/large/non-text uses where the
+     brighter brand teal is wanted and contrast rules don't apply.
+     --accent-fill is Phase F's new pink-as-surface role (buttons, frames,
+     solid blocks) — kept distinct from --accent (text/decorative pink) so
+     a fill can always resolve to the contrast-safe derivative regardless
+     of mode, the same split --brand already does for teal.
+
+     PHASE I: --surface/--panel swapped (cream default, offwhite inset) —
+     see the Section 10 note at the top of this file for the full
+     rationale and the re-verified contrast numbers. */
+  --surface: var(--kapu-cream);
+  --panel: var(--kapu-offwhite);
+  --surface-alt: var(--kapu-mint-deep);
+  --on-surface: var(--kapu-charcoal);
+  --on-surface-muted: color-mix(in srgb, var(--kapu-charcoal) 65%, transparent);
+  --accent: var(--kapu-pink);
+  --accent-fill: var(--kapu-pink-deep);
+  --brand: var(--kapu-teal-deep);
+  --border-soft: color-mix(in srgb, var(--kapu-charcoal) 16%, transparent);
+
+  /* PHASE H FIX — two separate, stacked bugs found while testing the
+     Majesty/Alex-Brush swap, neither related to the font choice itself:
+
+     Bug 1: a `--font-display`/`--font-body` indirection pair used to live
+     here (and, worse, ALSO inside the `@theme inline` block below, which in
+     Tailwind v4 auto-generates a colliding `.font-display`/`.font-body`
+     utility from every `--font-*` theme key — two different rules fighting
+     over the same class name).
+
+     Bug 2, the one that actually mattered: even fixed to a single
+     `:root`-level declaration, `--font-display: var(--font-kapu-display)`
+     doesn't work, full stop — `--font-kapu-display` is only ever set as an
+     INLINE custom property on <body> (see [locale]/layout.tsx), not on
+     :root/<html>. CSS custom property var() substitution resolves using
+     the referencing element's OWN cascade — at :root, `--font-kapu-display`
+     is simply unset, so `--font-display`'s computed value at :root is
+     guaranteed-invalid, and every descendant (including body itself)
+     inherits that already-invalid value. Body's own inline
+     `--font-kapu-display` never gets a chance to fill it in — an alias
+     declared above the element that owns the value it points to can't see
+     that value, no matter how many descendants would resolve it correctly
+     on their own.
+
+     Net effect: `.font-display` elements were silently falling through to
+     each rule's own plain fallback stack (ui-serif/Georgia/serif, or the
+     browser's default UI font) sitewide — this almost certainly means the
+     Sriracha display face was never actually rendering, going back to
+     whichever phase first introduced this pair, not just during this
+     phase's own work.
+
+     Fix: drop the `--font-display`/`--font-body` indirection layer
+     entirely. `.font-display` and `body{}` below now reference
+     `var(--font-kapu-display)` / `var(--font-kapu-body)` directly — both
+     are always read from inside <body>, exactly where they're actually
+     set, so there's no ancestor indirection left to break. */
+}
+
+/* Night-mode section: same tokens, different values — same room, later hour. */
+[data-mode="night"] {
+  --surface: var(--kapu-charcoal);
+  --panel: color-mix(in srgb, var(--kapu-teal) 22%, var(--kapu-charcoal));
+  --surface-alt: color-mix(in srgb, var(--kapu-teal) 40%, var(--kapu-charcoal));
+  --on-surface: var(--kapu-offwhite);
+  --on-surface-muted: color-mix(in srgb, var(--kapu-offwhite) 65%, transparent);
+  --accent: var(--kapu-pink);
+  --accent-fill: var(--kapu-pink-deep);
+  --brand: var(--kapu-mint-deep);
+  --border-soft: color-mix(in srgb, var(--kapu-offwhite) 16%, transparent);
+}
+
+@theme inline {
+  --color-teal: var(--kapu-teal);
+  --color-teal-deep: var(--kapu-teal-deep);
+  --color-mint: var(--kapu-mint);
+  --color-mint-deep: var(--kapu-mint-deep);
+  --color-pink: var(--kapu-pink);
+  --color-pink-deep: var(--kapu-pink-deep);
+  --color-charcoal: var(--kapu-charcoal);
+  --color-offwhite: var(--kapu-offwhite);
+  --color-green: var(--kapu-green);
+
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-surface-alt: var(--surface-alt);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-muted: var(--on-surface-muted);
+  --color-accent: var(--accent);
+  --color-accent-fill: var(--accent-fill);
+  --color-brand: var(--brand);
+  --color-border-soft: var(--border-soft);
+  --color-cream: var(--kapu-cream);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  /* PHASE I: matches the new --surface default (cream, not mint) — see the
+     Section 10 note above. */
+  background: var(--kapu-cream);
+  color: var(--kapu-charcoal);
+  font-family: var(--font-kapu-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-mode] {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  transition: background-color 700ms ease, color 700ms ease;
+}
+
+.font-display {
+  font-family: var(--font-kapu-display), ui-serif, Georgia, serif;
+  font-weight: var(--font-kapu-display-weight, 400);
+}
+
+/* Fix (Phase E QA): the homepage hero phrase is Greek text ("Πάμε #kapu να
+   τα πούμε;") on BOTH locales, but the /en display face (a Latin-only
+   script font) has no Greek glyphs — without this rule those characters
+   silently fell through the font stack to the browser's default sans on
+   every visit, English included, which meant the single largest headline
+   on the site was never actually rendering in a KAPU display face. Any
+   .font-display element explicitly marked lang="el" now always resolves to
+   the Greek-capable display face, regardless of which locale route it's on. */
+.font-display[lang="el"] {
+  font-family: "Comfortaa", var(--font-kapu-display), ui-sans-serif, sans-serif;
+  font-weight: 700;
+}
+
+/* A panel is the PDF's white (or, at night, lifted-charcoal) inset card
+   sitting on top of the mint/charcoal page — never the page's own default
+   background. Square-ish corners by design (2–3px), not a rounded-card
+   system: KAPU is hand-drawn/printed, not SaaS. */
+.kapu-panel {
+  background-color: var(--panel);
+  border-radius: 3px;
+}
+
+/* Hand-drawn dotted leader between a menu item's name and its price —
+   the printed-menu detail called out explicitly in the brief. */
+.kapu-leader {
+  flex: 1 1 auto;
+  border-bottom: 2px dotted var(--border-soft);
+  margin: 0 0.6em 0.35em;
+  min-width: 1rem;
+}
+
+/* Buttons — Phase E QA reconsidered the original four-mismatched-corners +
+   hover-rotation treatment as too cute for something used this often (Nav,
+   every CTA, every order/direction/call action): stacked with the wobble
+   dividers, dotted leaders and floral crops already carrying the hand-drawn
+   language elsewhere, a wiggling button read as gimmick rather than craft.
+   What's kept is a single confident, barely-there asymmetry — not a
+   perfect pill, not a cartoon blob — plus a plain lift on interaction. */
+.kapu-button {
+  border-radius: 14px 16px 13px 17px;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.kapu-button:hover {
+  transform: translateY(-1px);
+}
+.kapu-button:active {
+  transform: translateY(0);
+}
+
+/* Phase F: pink finally gets a real filled-surface role, not just text and
+   thin outlines — one confident "this is the KAPU-personality action" button,
+   used deliberately (not as the default CTA everywhere; teal-deep keeps that
+   job). Fill is the accessible pink-deep derivative, never raw pink, so
+   button-label-size white text always clears 4.5:1. */
+.kapu-button--accent {
+  background-color: var(--accent-fill);
+  color: var(--kapu-offwhite);
+}
+
+/* A solid or bordered pink block used as a section accent/frame — the
+   digital equivalent of the PDF's teal-bordered contact box, in pink. Text
+   placed on the filled variant should stay at large/bold sizes (raw pink
+   clears 3:1 large-text contrast on both charcoal and cream; small text
+   should use --accent-fill instead, per the same rule as buttons above). */
+.kapu-frame--accent {
+  border: 2px solid var(--accent);
+}
+
+/* Visible focus states everywhere — never removed for aesthetics */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--kapu-pink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--kapu-offwhite);
+  color: var(--kapu-charcoal);
+  padding: 0.75rem 1.25rem;
+  z-index: 100;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
