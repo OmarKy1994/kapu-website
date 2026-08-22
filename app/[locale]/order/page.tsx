@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { getSiteDict, getLocations } from "@/lib/content";
 import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { pageAlternates } from "@/lib/seo";
@@ -54,7 +54,8 @@ export default async function OrderPage({ params }: { params: Promise<{ locale: 
       <div className="mt-10 space-y-10">
         {locations.map((location) => (
           <div key={location.slug}>
-            <h2 className="font-display text-2xl" style={{ color: "var(--accent)" }}>{location.name}</h2>
+            {/* PHASE N — Section 4: Majesty removed from location names. */}
+            <h2 className="text-2xl font-semibold tracking-tight" style={{ color: "var(--accent)" }}>{location.name}</h2>
             <p className="mt-1 text-xs opacity-60">{location.neighborhood[locale]}</p>
             <div className="mt-4">
               <OrderButtons location={location} dict={dict} />

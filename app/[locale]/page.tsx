@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getSiteDict, getLocations, getBarMenu } from "@/lib/content";
@@ -65,7 +65,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           beneath it. */}
       <FullBleedHero
         src="/images/hero/kapu-staff-team-exterior.jpg"
-        alt="The KAPU team standing together in the doorway of the shop"
+        mobileSrc="/images/hero/kapu-hero-sign-handheld.jpg"
+        alt="The KAPU team outside the shop, beneath the hanging KAPU sign"
         kicker={dict.home.heroKicker}
         greekPhrase={dict.home.heroPhraseEl}
         englishTranslation={dict.home.heroPhraseTranslation}

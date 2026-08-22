@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -38,6 +38,22 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: SiteDict }
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  // PHASE N — Section 2 fix. Root cause of the "Menu is always green" bug:
+  // the mobile Menu <Link> below had a hardcoded style={{color:"var(--brand)"}}
+  // with nothing route-aware about it, so it read as "active" on every page
+  // (Locations, Order, Menu itself) — desktop had no active-state logic at
+  // all. Real route matching instead, using the already-available
+  // `pathname`: exact match for Menu/Order (no nested routes to worry
+  // about), startsWith for Locations since it has a `/locations/[slug]`
+  // detail route that should still read as active. `/order` is a real,
+  // independently-reachable route (see app/[locale]/order/page.tsx) even
+  // though the header's Order control is a modal trigger, so it gets the
+  // same real route check rather than being hardcoded false.
+  const isMenuActive = pathname === `${base}/menu`;
+  const isLocationsActive = pathname === `${base}/locations` || pathname.startsWith(`${base}/locations/`);
+  const isOrderActive = pathname === `${base}/order`;
+  const activeStyle = { color: "var(--brand)" } as const;
 
   // PHASE I — Section 3. The real supplied KAPU LOGO.png (full icon +
   // wordmark lockup, not reconstructed from the separate icon PNG + a
@@ -88,17 +104,32 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: SiteDict }
         )}
 
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-          <Link href={`${base}/menu`} className="text-sm font-medium tracking-wide hover:opacity-70">
+          <Link
+            href={`${base}/menu`}
+            aria-current={isMenuActive ? "page" : undefined}
+            className="text-sm font-medium tracking-wide hover:opacity-70"
+            style={isMenuActive ? activeStyle : undefined}
+          >
             {dict.nav.menu}
           </Link>
-          <Link href={`${base}/locations`} className="text-sm font-medium tracking-wide hover:opacity-70">
+          <Link
+            href={`${base}/locations`}
+            aria-current={isLocationsActive ? "page" : undefined}
+            className="text-sm font-medium tracking-wide hover:opacity-70"
+            style={isLocationsActive ? activeStyle : undefined}
+          >
             {dict.nav.findYourKapu}
           </Link>
           {/* PHASE I — Section 7: opens the quick location → platform
-              chooser instead of navigating to /order first. */}
+              chooser instead of navigating to /order first. It's already a
+              solid-fill brand-color button (visually distinct from the text
+              links above), so PHASE N gives it aria-current for correctness
+              when the real /order route is open, without adding a second,
+              redundant visual "active" treatment on top of the fill. */}
           <button
             type="button"
             onClick={openOrderModal}
+            aria-current={isOrderActive ? "page" : undefined}
             className="kapu-button px-4 py-2 text-sm font-semibold tracking-wide text-white hover:opacity-90"
             style={{ backgroundColor: "var(--kapu-teal-deep)" }}
           >
@@ -116,10 +147,20 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: SiteDict }
             2-letter language pill. Order moves out of this row entirely —
             it's now the bottom bar's one job, not duplicated here. */}
         <div className="flex min-w-0 items-center gap-3 md:hidden">
-          <Link href={`${base}/menu`} className="shrink-0 whitespace-nowrap text-sm font-semibold tracking-wide hover:opacity-70" style={{ color: "var(--brand)" }}>
+          <Link
+            href={`${base}/menu`}
+            aria-current={isMenuActive ? "page" : undefined}
+            className="shrink-0 whitespace-nowrap text-sm font-semibold tracking-wide hover:opacity-70"
+            style={isMenuActive ? activeStyle : undefined}
+          >
             {dict.nav.menu}
           </Link>
-          <Link href={`${base}/locations`} className="min-w-0 truncate text-xs font-medium tracking-wide opacity-80 hover:opacity-100">
+          <Link
+            href={`${base}/locations`}
+            aria-current={isLocationsActive ? "page" : undefined}
+            className="min-w-0 truncate text-xs font-medium tracking-wide opacity-80 hover:opacity-100"
+            style={isLocationsActive ? activeStyle : undefined}
+          >
             {dict.nav.findYourKapu}
           </Link>
           <LanguageSwitcher locale={locale} label={dict.nav.languageSwitchLabel} compact />

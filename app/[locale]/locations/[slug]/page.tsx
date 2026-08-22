@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -145,7 +145,13 @@ export default async function LocationPage({
         <Link href={`/${locale}/locations`} className="text-xs font-semibold uppercase tracking-wider opacity-60 hover:opacity-100">
           ← {dict.locations.backToLocations}
         </Link>
-        <h1 className="mt-3 font-display text-4xl md:text-5xl" style={{ color: "var(--accent)" }}>
+        {/* PHASE N — Section 4: Majesty removed from location names (this is
+            the brief's literal example, "KAPU Kypseli"/"KAPU Kallithea").
+            font-semibold replaces it as a restrained, non-decorative weight
+            lever — the page heading still needs to read as a heading, just
+            not in the display script reserved for editorial/expressive
+            copy. */}
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl" style={{ color: "var(--accent)" }}>
           {location.name}
         </h1>
         <p className="mt-1 text-sm opacity-70">{location.neighborhood[locale]}</p>

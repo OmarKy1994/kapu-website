@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+﻿import type { Locale } from "@/lib/i18n";
 import type { SiteDict } from "@/lib/content";
 import type { LocationData } from "@/lib/types";
 import OrderButtons from "@/components/order/OrderButtons";
@@ -58,7 +58,13 @@ export default function LocationInfo({
             <dt className="text-xs font-semibold uppercase tracking-[0.18em] opacity-60">
               {dict.locations.hoursLabel}
             </dt>
-            <dd className="mt-1 font-display text-2xl" style={{ color: "var(--brand)" }}>
+            {/* PHASE N — Section 4: not in the brief's literal location-name
+                list, but the same reasoning applies directly — hours are
+                functional data a visitor needs to read quickly and trust,
+                not editorial copy, so it gets the same restrained weight
+                instead of the display script. Flagged in the Phase N report
+                as an extension beyond the brief's literal examples. */}
+            <dd className="mt-1 text-2xl font-semibold tracking-tight" style={{ color: "var(--brand)" }}>
               {location.hours[locale]}
             </dd>
           </div>

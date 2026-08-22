@@ -1,4 +1,4 @@
-{
+﻿{
   "mode": "cafe",
   "sourceNote": "Kapu TAKEAWAY Menu ENG — Last Updated August 14, 2026 (local PDF, official).",
   "categories": [
@@ -6,20 +6,20 @@
       "id": "coffee",
       "name": { "en": "Coffee", "el": "Καφές" },
       "items": [
-        { "id": "espresso-stretto-lungo", "name": { "en": "Espresso Stretto / Lungo", "el": "Espresso Stretto / Lungo" }, "price": "2.30 / 2.50" },
-        { "id": "espresso-single-double", "name": { "en": "Espresso Single / Double", "el": "Espresso Single / Double" }, "price": "2.30 / 2.50" },
-        { "id": "macchiato", "name": { "en": "Macchiato", "el": "Macchiato" }, "price": "2.50" },
-        { "id": "cappuccino", "name": { "en": "Cappuccino Single / Double", "el": "Καπουτσίνο Single / Double" }, "price": "2.50 / 2.70" },
-        { "id": "caffe-latte", "name": { "en": "Caffè Latte", "el": "Caffè Latte" }, "price": "2.70" },
-        { "id": "flat-white", "name": { "en": "Flat White", "el": "Flat White" }, "price": "2.70" },
-        { "id": "americano", "name": { "en": "Americano", "el": "Americano" }, "price": "2.50" },
-        { "id": "freddo-espresso", "name": { "en": "Freddo Espresso", "el": "Freddo Espresso" }, "price": "2.50" },
-        { "id": "freddo-cappuccino", "name": { "en": "Freddo Cappuccino", "el": "Freddo Καπουτσίνο" }, "price": "2.70" },
-        { "id": "freddo-latte", "name": { "en": "Freddo Latte", "el": "Freddo Latte" }, "price": "2.70" },
-        { "id": "filter-coffee", "name": { "en": "Filter Coffee", "el": "Καφές Φίλτρου" }, "price": "2.50" },
-        { "id": "cold-brew", "name": { "en": "Cold Brew", "el": "Cold Brew" }, "price": "4.00" },
-        { "id": "ibrik-greek-coffee", "name": { "en": "Ibrik – Greek Coffee Single / Double", "el": "Μπρίκι – Ελληνικός Καφές Μονός / Διπλός" }, "price": "2.10 / 2.30" },
-        { "id": "frappe-nes", "name": { "en": "Frappé / Nes", "el": "Φραπέ / Νες" }, "price": "2.50" }
+        { "id": "espresso-stretto-lungo", "name": { "en": "Espresso Stretto / Lungo", "el": "Espresso Stretto / Lungo" }, "price": "2.30 / 2.50" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "espresso-single-double", "name": { "en": "Espresso Single / Double", "el": "Espresso Single / Double" }, "price": "2.30 / 2.50" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "macchiato", "name": { "en": "Macchiato", "el": "Macchiato" }, "price": "2.50" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "cappuccino", "name": { "en": "Cappuccino Single / Double", "el": "Καπουτσίνο Single / Double" }, "price": "2.50 / 2.70" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "caffe-latte", "name": { "en": "Caffè Latte", "el": "Caffè Latte" }, "price": "2.70" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "flat-white", "name": { "en": "Flat White", "el": "Flat White" }, "price": "2.70" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "americano", "name": { "en": "Americano", "el": "Americano" }, "price": "2.50" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "freddo-espresso", "name": { "en": "Freddo Espresso", "el": "Freddo Espresso" }, "price": "2.50" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "freddo-cappuccino", "name": { "en": "Freddo Cappuccino", "el": "Freddo Καπουτσίνο" }, "price": "2.70" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "freddo-latte", "name": { "en": "Freddo Latte", "el": "Freddo Latte" }, "price": "2.70" , "image": "/images/photography/latte-pour-closeup.jpg" },
+        { "id": "filter-coffee", "name": { "en": "Filter Coffee", "el": "Καφές Φίλτρου" }, "price": "2.50" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "cold-brew", "name": { "en": "Cold Brew", "el": "Cold Brew" }, "price": "4.00" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "ibrik-greek-coffee", "name": { "en": "Ibrik – Greek Coffee Single / Double", "el": "Μπρίκι – Ελληνικός Καφές Μονός / Διπλός" }, "price": "2.10 / 2.30" , "image": "/images/photography/espresso-pour.jpg" },
+        { "id": "frappe-nes", "name": { "en": "Frappé / Nes", "el": "Φραπέ / Νες" }, "price": "2.50" , "image": "/images/photography/latte-pour-closeup.jpg" }
       ],
       "notes": {
         "en": "Decaf available on request. Single Origin +€0.20 · Extra Shot +€0.50 · Almond / Oat / Soy milk +€0.50 · Syrup +€0.50.",
@@ -30,19 +30,19 @@
       "id": "non-coffee",
       "name": { "en": "Non Coffee", "el": "Χωρίς Καφέ" },
       "items": [
-        { "id": "mr-bean-chocolate", "name": { "en": "Mr Bean Chocolate — Classic / White / Bitter", "el": "Mr Bean Chocolate — Classic / White / Bitter" }, "price": "2.70" },
-        { "id": "marchoc-chocolate", "name": { "en": "Marchoc Chocolate", "el": "Marchoc Chocolate" }, "description": { "en": "Bueno, Salted Caramel, Orange & Cinnamon, Tsoureki, Spicy, or Raspberry & Pomegranate.", "el": "Bueno, Salted Caramel, Πορτοκάλι & Κανέλα, Τσουρέκι, Spicy, ή Ρόδι & Βατόμουρο." }, "price": "3.00" },
-        { "id": "fondante-strawberry-kiss", "name": { "en": "Fondante Strawberry Kiss", "el": "Fondante Strawberry Kiss" }, "price": "3.00" }
+        { "id": "mr-bean-chocolate", "name": { "en": "Mr Bean Chocolate — Classic / White / Bitter", "el": "Mr Bean Chocolate — Classic / White / Bitter" }, "price": "2.70" , "image": "/images/menu/coffee-mint.jpg" },
+        { "id": "marchoc-chocolate", "name": { "en": "Marchoc Chocolate", "el": "Marchoc Chocolate" }, "description": { "en": "Bueno, Salted Caramel, Orange & Cinnamon, Tsoureki, Spicy, or Raspberry & Pomegranate.", "el": "Bueno, Salted Caramel, Πορτοκάλι & Κανέλα, Τσουρέκι, Spicy, ή Ρόδι & Βατόμουρο." }, "price": "3.00" , "image": "/images/menu/coffee-mint.jpg" },
+        { "id": "fondante-strawberry-kiss", "name": { "en": "Fondante Strawberry Kiss", "el": "Fondante Strawberry Kiss" }, "price": "3.00" , "image": "/images/menu/coffee-mint.jpg" }
       ]
     },
     {
       "id": "tea",
       "name": { "en": "Tea", "el": "Τσάι" },
       "items": [
-        { "id": "young-hyson", "name": { "en": "Young Hyson / Latte", "el": "Young Hyson / Latte" }, "description": { "en": "The Young Hyson variety of green tea, brewed by ancient Chinese methods from plants grown at high altitude. 100% Ceylon tea.", "el": "Πράσινο τσάι ποικιλίας Young Hyson, φτιαγμένο με αρχαίες κινεζικές μεθόδους από φυτά υψηλού υψομέτρου. 100% τσάι Κεϋλάνης." }, "price": "2.30 / 3.30" },
-        { "id": "earl-grey", "name": { "en": "Earl Grey / Latte", "el": "Earl Grey / Latte" }, "description": { "en": "Natural bergamot essential oil combined with a special FBOP variety from the Dimbula region of Sri Lanka, grown at 1,500m altitude.", "el": "Φυσικό αιθέριο έλαιο περγαμόντου σε συνδυασμό με ειδική ποικιλία FBOP από την περιοχή Dimbula της Σρι Λάνκα, σε υψόμετρο 1.500μ." }, "price": "2.30 / 3.30" },
-        { "id": "white-angel", "name": { "en": "White Angel / Latte", "el": "White Angel / Latte" }, "description": { "en": "White tea with cinnamon, orange peel, almonds, lemongrass, green tea, black tea, orange and rose flowers.", "el": "Λευκό τσάι με κανέλα, φλούδα πορτοκαλιού, αμύγδαλα, λεμονόχορτο, πράσινο τσάι, μαύρο τσάι, άνθη πορτοκαλιάς και τριαντάφυλλου." }, "price": "2.30 / 3.30" },
-        { "id": "little-prince", "name": { "en": "Little Prince / Latte", "el": "Little Prince / Latte" }, "description": { "en": "Pieces of apple, grape and strawberry, hibiscus and chamomile flowers, and rose petals. Caffeine-free.", "el": "Κομμάτια μήλου, σταφυλιού και φράουλας, άνθη ιβίσκου και χαμομηλιού, και πέταλα τριαντάφυλλου. Χωρίς καφεΐνη." }, "price": "2.30 / 3.30" }
+        { "id": "young-hyson", "name": { "en": "Young Hyson / Latte", "el": "Young Hyson / Latte" }, "description": { "en": "The Young Hyson variety of green tea, brewed by ancient Chinese methods from plants grown at high altitude. 100% Ceylon tea.", "el": "Πράσινο τσάι ποικιλίας Young Hyson, φτιαγμένο με αρχαίες κινεζικές μεθόδους από φυτά υψηλού υψομέτρου. 100% τσάι Κεϋλάνης." }, "price": "2.30 / 3.30" , "image": "/images/menu/coffee-mint.jpg" },
+        { "id": "earl-grey", "name": { "en": "Earl Grey / Latte", "el": "Earl Grey / Latte" }, "description": { "en": "Natural bergamot essential oil combined with a special FBOP variety from the Dimbula region of Sri Lanka, grown at 1,500m altitude.", "el": "Φυσικό αιθέριο έλαιο περγαμόντου σε συνδυασμό με ειδική ποικιλία FBOP από την περιοχή Dimbula της Σρι Λάνκα, σε υψόμετρο 1.500μ." }, "price": "2.30 / 3.30" , "image": "/images/menu/coffee-mint.jpg" },
+        { "id": "white-angel", "name": { "en": "White Angel / Latte", "el": "White Angel / Latte" }, "description": { "en": "White tea with cinnamon, orange peel, almonds, lemongrass, green tea, black tea, orange and rose flowers.", "el": "Λευκό τσάι με κανέλα, φλούδα πορτοκαλιού, αμύγδαλα, λεμονόχορτο, πράσινο τσάι, μαύρο τσάι, άνθη πορτοκαλιάς και τριαντάφυλλου." }, "price": "2.30 / 3.30" , "image": "/images/menu/coffee-mint.jpg" },
+        { "id": "little-prince", "name": { "en": "Little Prince / Latte", "el": "Little Prince / Latte" }, "description": { "en": "Pieces of apple, grape and strawberry, hibiscus and chamomile flowers, and rose petals. Caffeine-free.", "el": "Κομμάτια μήλου, σταφυλιού και φράουλας, άνθη ιβίσκου και χαμομηλιού, και πέταλα τριαντάφυλλου. Χωρίς καφεΐνη." }, "price": "2.30 / 3.30" , "image": "/images/menu/coffee-mint.jpg" }
       ]
     },
     {
@@ -50,70 +50,70 @@
       "name": { "en": "Cold Tea", "el": "Κρύο Τσάι" },
       "description": { "en": "Firefly range — refreshing fruit-and-water blends with active herbs, natural fruit sugars, no additives or preservatives.", "el": "Σειρά Firefly — αναζωογονητικά ροφήματα φρούτου με νερό και ενεργά βότανα, φυσικά σάκχαρα φρούτων, χωρίς πρόσθετα ή συντηρητικά." },
       "items": [
-        { "id": "firefly-kiwi-lime-mint", "name": { "en": "Firefly Kiwi, Lime & Mint 330ml", "el": "Firefly Ακτινίδιο, Lime & Δυόσμο 330ml" }, "price": "3.50" },
-        { "id": "firefly-lemon-ginger", "name": { "en": "Firefly Lemon & Ginger 330ml", "el": "Firefly Λεμόνι & Τζίντζερ 330ml" }, "price": "3.50" },
-        { "id": "firefly-peach-green-tea", "name": { "en": "Firefly Peach & Green Tea 330ml", "el": "Firefly Ροδάκινο & Πράσινο Τσάι 330ml" }, "price": "3.50" },
-        { "id": "firefly-pomegranate-elderflower", "name": { "en": "Firefly Pomegranate & Elder Flower 330ml", "el": "Firefly Ρόδι & Άνθος Κουφοξυλιάς 330ml" }, "price": "3.50" }
+        { "id": "firefly-kiwi-lime-mint", "name": { "en": "Firefly Kiwi, Lime & Mint 330ml", "el": "Firefly Ακτινίδιο, Lime & Δυόσμο 330ml" }, "price": "3.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "firefly-lemon-ginger", "name": { "en": "Firefly Lemon & Ginger 330ml", "el": "Firefly Λεμόνι & Τζίντζερ 330ml" }, "price": "3.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "firefly-peach-green-tea", "name": { "en": "Firefly Peach & Green Tea 330ml", "el": "Firefly Ροδάκινο & Πράσινο Τσάι 330ml" }, "price": "3.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "firefly-pomegranate-elderflower", "name": { "en": "Firefly Pomegranate & Elder Flower 330ml", "el": "Firefly Ρόδι & Άνθος Κουφοξυλιάς 330ml" }, "price": "3.50" , "image": "/images/cocktails/mojito.jpg" }
       ]
     },
     {
       "id": "juices",
       "name": { "en": "Juices", "el": "Χυμοί" },
       "items": [
-        { "id": "fresh-orange-juice", "name": { "en": "Fresh Orange Juice", "el": "Φρέσκος Χυμός Πορτοκάλι" }, "price": "2.30", "tags": ["vegan"] }
+        { "id": "fresh-orange-juice", "name": { "en": "Fresh Orange Juice", "el": "Φρέσκος Χυμός Πορτοκάλι" }, "price": "2.30", "tags": ["vegan"] , "image": "/images/cocktails/mojito.jpg" }
       ]
     },
     {
       "id": "soft-drinks",
       "name": { "en": "Soft Drinks / Beverages", "el": "Αναψυκτικά / Ροφήματα" },
       "items": [
-        { "id": "daf-hibiscus-mint", "name": { "en": "Daf Hibiscus & Mint 250ml", "el": "Daf Ιβίσκος & Δυόσμος 250ml" }, "price": "4.00" },
-        { "id": "kult-kefir", "name": { "en": "Kult Kefir Yuzu & Tangerine 330ml", "el": "Kult Kefir Yuzu & Μανταρίνι 330ml" }, "price": "4.50" },
-        { "id": "kumasi", "name": { "en": "Kumasi 330ml", "el": "Kumasi 330ml" }, "price": "4.50" },
-        { "id": "bouche-kombucha-cherry", "name": { "en": "Bouché Kombucha Cherry 330ml", "el": "Bouché Kombucha Κεράσι 330ml" }, "price": "4.00" },
-        { "id": "coca-cola", "name": { "en": "Coca-Cola 500ml", "el": "Coca-Cola 500ml" }, "price": "2.50" },
-        { "id": "coca-cola-zero", "name": { "en": "Coca-Cola Zero 500ml", "el": "Coca-Cola Zero 500ml" }, "price": "2.50" },
-        { "id": "hbh-orange", "name": { "en": "HBH Orange 330ml", "el": "HBH Πορτοκάλι 330ml" }, "price": "2.20" },
-        { "id": "sprite", "name": { "en": "Sprite 500ml", "el": "Sprite 500ml" }, "price": "2.50" },
-        { "id": "schweppes-soda", "name": { "en": "Schweppes Soda 500ml", "el": "Schweppes Soda 500ml" }, "price": "2.50" },
-        { "id": "schweppes-tonic", "name": { "en": "Schweppes Tonic 500ml", "el": "Schweppes Tonic 500ml" }, "price": "2.50" },
-        { "id": "schweppes-pink-grapefruit", "name": { "en": "Schweppes Pink Grapefruit Soda 250ml", "el": "Schweppes Pink Grapefruit Soda 250ml" }, "price": "2.70" },
-        { "id": "red-bull", "name": { "en": "Red Bull 250ml", "el": "Red Bull 250ml" }, "price": "3.50" }
+        { "id": "daf-hibiscus-mint", "name": { "en": "Daf Hibiscus & Mint 250ml", "el": "Daf Ιβίσκος & Δυόσμος 250ml" }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "kult-kefir", "name": { "en": "Kult Kefir Yuzu & Tangerine 330ml", "el": "Kult Kefir Yuzu & Μανταρίνι 330ml" }, "price": "4.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "kumasi", "name": { "en": "Kumasi 330ml", "el": "Kumasi 330ml" }, "price": "4.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "bouche-kombucha-cherry", "name": { "en": "Bouché Kombucha Cherry 330ml", "el": "Bouché Kombucha Κεράσι 330ml" }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "coca-cola", "name": { "en": "Coca-Cola 500ml", "el": "Coca-Cola 500ml" }, "price": "2.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "coca-cola-zero", "name": { "en": "Coca-Cola Zero 500ml", "el": "Coca-Cola Zero 500ml" }, "price": "2.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "hbh-orange", "name": { "en": "HBH Orange 330ml", "el": "HBH Πορτοκάλι 330ml" }, "price": "2.20" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "sprite", "name": { "en": "Sprite 500ml", "el": "Sprite 500ml" }, "price": "2.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "schweppes-soda", "name": { "en": "Schweppes Soda 500ml", "el": "Schweppes Soda 500ml" }, "price": "2.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "schweppes-tonic", "name": { "en": "Schweppes Tonic 500ml", "el": "Schweppes Tonic 500ml" }, "price": "2.50" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "schweppes-pink-grapefruit", "name": { "en": "Schweppes Pink Grapefruit Soda 250ml", "el": "Schweppes Pink Grapefruit Soda 250ml" }, "price": "2.70" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "red-bull", "name": { "en": "Red Bull 250ml", "el": "Red Bull 250ml" }, "price": "3.50" , "image": "/images/cocktails/mojito.jpg" }
       ]
     },
     {
       "id": "lemonades-smoothies",
       "name": { "en": "Lemonades / Smoothies", "el": "Λεμονάδες / Smoothies" },
       "items": [
-        { "id": "lemonade-ginger", "name": { "en": "Lemonade with Ginger 330ml", "el": "Λεμονάδα με Τζίντζερ 330ml" }, "price": "4.00" },
-        { "id": "lemonade-blood-orange-cherry", "name": { "en": "Lemonade with Blood Orange & Cherry 330ml", "el": "Λεμονάδα με Κόκκινο Πορτοκάλι & Κεράσι 330ml" }, "price": "4.00" },
-        { "id": "lemonade-passion-fruit", "name": { "en": "Lemonade with Passion Fruit 330ml", "el": "Λεμονάδα με Passion Fruit 330ml" }, "price": "4.00" },
-        { "id": "yumtales-01-tropic-splash", "name": { "en": "YumTales 01 — Tropic Splash 240ml", "el": "YumTales 01 — Tropic Splash 240ml" }, "description": { "en": "Orange, mango, banana, pineapple, apple. Sugar free.", "el": "Πορτοκάλι, μάνγκο, μπανάνα, ανανάς, μήλο. Χωρίς ζάχαρη." }, "price": "4.00" },
-        { "id": "yumtales-02-island-breeze", "name": { "en": "YumTales 02 — Island Breeze 240ml", "el": "YumTales 02 — Island Breeze 240ml" }, "description": { "en": "Banana, pineapple, apple, coconut. Sugar free.", "el": "Μπανάνα, ανανάς, μήλο, καρύδα. Χωρίς ζάχαρη." }, "price": "4.00" },
-        { "id": "yumtales-03-berry-bliss", "name": { "en": "YumTales 03 — Berry Bliss 240ml", "el": "YumTales 03 — Berry Bliss 240ml" }, "description": { "en": "Strawberry, raspberry, banana, apple. Sugar free.", "el": "Φράουλα, βατόμουρο, μπανάνα, μήλο. Χωρίς ζάχαρη." }, "price": "4.00" },
-        { "id": "yumtales-04-green-glow", "name": { "en": "YumTales 04 — Green Glow 240ml", "el": "YumTales 04 — Green Glow 240ml" }, "description": { "en": "Kiwi, spinach, pear, apple, banana, pineapple. Sugar free.", "el": "Ακτινίδιο, σπανάκι, αχλάδι, μήλο, μπανάνα, ανανάς. Χωρίς ζάχαρη." }, "price": "4.00" },
-        { "id": "yumtales-06-sunny-delight", "name": { "en": "YumTales 06 — Sunny Delight 240ml", "el": "YumTales 06 — Sunny Delight 240ml" }, "description": { "en": "Banana, apricot, carrot. Sugar free.", "el": "Μπανάνα, βερίκοκο, καρότο. Χωρίς ζάχαρη." }, "price": "4.00" }
+        { "id": "lemonade-ginger", "name": { "en": "Lemonade with Ginger 330ml", "el": "Λεμονάδα με Τζίντζερ 330ml" }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "lemonade-blood-orange-cherry", "name": { "en": "Lemonade with Blood Orange & Cherry 330ml", "el": "Λεμονάδα με Κόκκινο Πορτοκάλι & Κεράσι 330ml" }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "lemonade-passion-fruit", "name": { "en": "Lemonade with Passion Fruit 330ml", "el": "Λεμονάδα με Passion Fruit 330ml" }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "yumtales-01-tropic-splash", "name": { "en": "YumTales 01 — Tropic Splash 240ml", "el": "YumTales 01 — Tropic Splash 240ml" }, "description": { "en": "Orange, mango, banana, pineapple, apple. Sugar free.", "el": "Πορτοκάλι, μάνγκο, μπανάνα, ανανάς, μήλο. Χωρίς ζάχαρη." }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "yumtales-02-island-breeze", "name": { "en": "YumTales 02 — Island Breeze 240ml", "el": "YumTales 02 — Island Breeze 240ml" }, "description": { "en": "Banana, pineapple, apple, coconut. Sugar free.", "el": "Μπανάνα, ανανάς, μήλο, καρύδα. Χωρίς ζάχαρη." }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "yumtales-03-berry-bliss", "name": { "en": "YumTales 03 — Berry Bliss 240ml", "el": "YumTales 03 — Berry Bliss 240ml" }, "description": { "en": "Strawberry, raspberry, banana, apple. Sugar free.", "el": "Φράουλα, βατόμουρο, μπανάνα, μήλο. Χωρίς ζάχαρη." }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "yumtales-04-green-glow", "name": { "en": "YumTales 04 — Green Glow 240ml", "el": "YumTales 04 — Green Glow 240ml" }, "description": { "en": "Kiwi, spinach, pear, apple, banana, pineapple. Sugar free.", "el": "Ακτινίδιο, σπανάκι, αχλάδι, μήλο, μπανάνα, ανανάς. Χωρίς ζάχαρη." }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" },
+        { "id": "yumtales-06-sunny-delight", "name": { "en": "YumTales 06 — Sunny Delight 240ml", "el": "YumTales 06 — Sunny Delight 240ml" }, "description": { "en": "Banana, apricot, carrot. Sugar free.", "el": "Μπανάνα, βερίκοκο, καρότο. Χωρίς ζάχαρη." }, "price": "4.00" , "image": "/images/cocktails/mojito.jpg" }
       ]
     },
     {
       "id": "sandwiches",
       "name": { "en": "Sandwiches", "el": "Σάντουιτς" },
       "items": [
-        { "id": "turkey-yoghurt-wrap", "name": { "en": "Turkey & Yoghurt Cheese Wrap", "el": "Wrap Γαλοπούλα & Τυρί Γιαουρτιού" }, "description": { "en": "Smoked turkey, yoghurt cheese sauce, Florina pepper, cucumber, lettuce, in Arabic wholewheat bread.", "el": "Καπνιστή γαλοπούλα, σάλτσα τυριού γιαουρτιού, πιπεριά Φλωρίνης, αγγούρι, μαρούλι, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50" },
-        { "id": "parmesan-pesto-chicken-wrap", "name": { "en": "Parmesan Pesto Chicken Wrap", "el": "Wrap Κοτόπουλο Parmesan Pesto" }, "description": { "en": "Chicken fillet, parmesan, mayonnaise, homemade basil pesto, lettuce, Florina pepper & sundried tomato, in Arabic wholewheat bread.", "el": "Φιλέτο κοτόπουλο, παρμεζάνα, μαγιονέζα, σπιτικό πέστο βασιλικού, μαρούλι, πιπεριά Φλωρίνης & λιαστή ντομάτα, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50" },
-        { "id": "vegan-quinoa-burger-wrap", "name": { "en": "Vegan Quinoa Burger Wrap", "el": "Wrap Vegan Μπιφτέκι Κινόα" }, "description": { "en": "Quinoa veggie burger, cabbage, carrot, celery, turmeric hummus, in Arabic wholewheat bread.", "el": "Χορτοφαγικό μπιφτέκι κινόα, λάχανο, καρότο, σέλινο, χούμους κουρκουμά, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50", "tags": ["vegan"] },
-        { "id": "avocado-chicken-caesar-ciabatta", "name": { "en": "Avocado Chicken Caesar Ciabatta", "el": "Ciabatta Αβοκάντο Κοτόπουλο Caesar" }, "description": { "en": "Corn ciabatta with chicken fillet, avocado mousse, parmesan, kale, tomato & parmesan vinaigrette.", "el": "Ciabatta καλαμποκιού με φιλέτο κοτόπουλο, μους αβοκάντο, παρμεζάνα, κέιλ, ντομάτα & vinaigrette παρμεζάνας." }, "price": "4.00" },
-        { "id": "vegetarian-avocado-mozzarella-ciabatta", "name": { "en": "Vegetarian Avocado & Mozzarella Ciabatta", "el": "Ciabatta Αβοκάντο & Μοτσαρέλα" }, "description": { "en": "Sesame ciabatta with mozzarella, avocado, tomato, arugula & handmade pesto basil.", "el": "Ciabatta σουσαμιού με μοτσαρέλα, αβοκάντο, ντομάτα, ρόκα & χειροποίητο πέστο βασιλικού." }, "price": "4.00" },
-        { "id": "smoked-salmon-sourdough", "name": { "en": "Smoked Salmon Sourdough Bread", "el": "Προζυμένιο Ψωμί Καπνιστός Σολομός" }, "description": { "en": "Smoked salmon, cream cheese with chives, capers, cucumber & iceberg.", "el": "Καπνιστός σολομός, τυρί κρέμα με σχοινόπρασο, κάπαρη, αγγούρι & iceberg." }, "price": "4.60" },
-        { "id": "tuna-salad-sourdough", "name": { "en": "Tuna Salad Sourdough Bread", "el": "Προζυμένιο Ψωμί Σαλάτα Τόνου" }, "description": { "en": "Homemade tuna salad with cherry tomatoes.", "el": "Σπιτική σαλάτα τόνου με ντοματίνια." }, "price": "4.60" },
-        { "id": "avocado-egg-sourdough", "name": { "en": "Avocado & Egg Sourdough Bread", "el": "Προζυμένιο Ψωμί Αβοκάντο & Αυγό" }, "description": { "en": "Egg, creamy avocado, sour milk, radish & mustard.", "el": "Αυγό, κρεμώδες αβοκάντο, ξινόγαλα, ραπανάκι & μουστάρδα." }, "price": "4.60" },
+        { "id": "turkey-yoghurt-wrap", "name": { "en": "Turkey & Yoghurt Cheese Wrap", "el": "Wrap Γαλοπούλα & Τυρί Γιαουρτιού" }, "description": { "en": "Smoked turkey, yoghurt cheese sauce, Florina pepper, cucumber, lettuce, in Arabic wholewheat bread.", "el": "Καπνιστή γαλοπούλα, σάλτσα τυριού γιαουρτιού, πιπεριά Φλωρίνης, αγγούρι, μαρούλι, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "parmesan-pesto-chicken-wrap", "name": { "en": "Parmesan Pesto Chicken Wrap", "el": "Wrap Κοτόπουλο Parmesan Pesto" }, "description": { "en": "Chicken fillet, parmesan, mayonnaise, homemade basil pesto, lettuce, Florina pepper & sundried tomato, in Arabic wholewheat bread.", "el": "Φιλέτο κοτόπουλο, παρμεζάνα, μαγιονέζα, σπιτικό πέστο βασιλικού, μαρούλι, πιπεριά Φλωρίνης & λιαστή ντομάτα, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "vegan-quinoa-burger-wrap", "name": { "en": "Vegan Quinoa Burger Wrap", "el": "Wrap Vegan Μπιφτέκι Κινόα" }, "description": { "en": "Quinoa veggie burger, cabbage, carrot, celery, turmeric hummus, in Arabic wholewheat bread.", "el": "Χορτοφαγικό μπιφτέκι κινόα, λάχανο, καρότο, σέλινο, χούμους κουρκουμά, σε αραβική ολικής άλεσης πίτα." }, "price": "3.50", "tags": ["vegan"] , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "avocado-chicken-caesar-ciabatta", "name": { "en": "Avocado Chicken Caesar Ciabatta", "el": "Ciabatta Αβοκάντο Κοτόπουλο Caesar" }, "description": { "en": "Corn ciabatta with chicken fillet, avocado mousse, parmesan, kale, tomato & parmesan vinaigrette.", "el": "Ciabatta καλαμποκιού με φιλέτο κοτόπουλο, μους αβοκάντο, παρμεζάνα, κέιλ, ντομάτα & vinaigrette παρμεζάνας." }, "price": "4.00" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "vegetarian-avocado-mozzarella-ciabatta", "name": { "en": "Vegetarian Avocado & Mozzarella Ciabatta", "el": "Ciabatta Αβοκάντο & Μοτσαρέλα" }, "description": { "en": "Sesame ciabatta with mozzarella, avocado, tomato, arugula & handmade pesto basil.", "el": "Ciabatta σουσαμιού με μοτσαρέλα, αβοκάντο, ντομάτα, ρόκα & χειροποίητο πέστο βασιλικού." }, "price": "4.00" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "smoked-salmon-sourdough", "name": { "en": "Smoked Salmon Sourdough Bread", "el": "Προζυμένιο Ψωμί Καπνιστός Σολομός" }, "description": { "en": "Smoked salmon, cream cheese with chives, capers, cucumber & iceberg.", "el": "Καπνιστός σολομός, τυρί κρέμα με σχοινόπρασο, κάπαρη, αγγούρι & iceberg." }, "price": "4.60" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "tuna-salad-sourdough", "name": { "en": "Tuna Salad Sourdough Bread", "el": "Προζυμένιο Ψωμί Σαλάτα Τόνου" }, "description": { "en": "Homemade tuna salad with cherry tomatoes.", "el": "Σπιτική σαλάτα τόνου με ντοματίνια." }, "price": "4.60" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "avocado-egg-sourdough", "name": { "en": "Avocado & Egg Sourdough Bread", "el": "Προζυμένιο Ψωμί Αβοκάντο & Αυγό" }, "description": { "en": "Egg, creamy avocado, sour milk, radish & mustard.", "el": "Αυγό, κρεμώδες αβοκάντο, ξινόγαλα, ραπανάκι & μουστάρδα." }, "price": "4.60" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
         { "id": "beef-pastrami-baguette", "name": { "en": "Beef Pastrami Baguette", "el": "Μπαγκέτα Pastrami Μοσχάρι" }, "description": { "en": "Beef pastrami, Cretan graviera, pickles, arugula, radish, honey-mustard sauce, multigrain bread.", "el": "Pastrami μοσχάρι, κρητική γραβιέρα, τουρσί, ρόκα, ραπανάκι, σάλτσα μελιού-μουστάρδας, πολύσπορο ψωμί." }, "price": "4.50", "image": "/images/menu/beef-pastrami-baguette.jpg" },
-        { "id": "donut", "name": { "en": "Donut", "el": "Donut" }, "description": { "en": "Donut with ham and edam cheese.", "el": "Donut με ζαμπόν και τυρί edam." }, "price": "3.20" },
-        { "id": "turkey-baguette", "name": { "en": "Turkey Baguette", "el": "Μπαγκέτα Γαλοπούλα" }, "description": { "en": "Baguette with turkey, edam cheese and mayonnaise.", "el": "Μπαγκέτα με γαλοπούλα, τυρί edam και μαγιονέζα." }, "price": "3.20" },
-        { "id": "chicken-viennese", "name": { "en": "Chicken Viennese", "el": "Βιεννέζικο Κοτόπουλο" }, "description": { "en": "Viennese bread with chicken, mustard and iceberg.", "el": "Βιεννέζικο ψωμί με κοτόπουλο, μουστάρδα και iceberg." }, "price": "3.60" },
-        { "id": "turkey-croissant", "name": { "en": "Turkey Croissant", "el": "Croissant Γαλοπούλα" }, "description": { "en": "Croissant with turkey, edam cheese and mayonnaise.", "el": "Croissant με γαλοπούλα, τυρί edam και μαγιονέζα." }, "price": "3.20" },
-        { "id": "ham-toast", "name": { "en": "Ham Toast", "el": "Τοστ Ζαμπόν" }, "description": { "en": "Toast with ham and edam cheese.", "el": "Τοστ με ζαμπόν και τυρί edam." }, "price": "2.50" },
-        { "id": "turkey-toast", "name": { "en": "Turkey Toast", "el": "Τοστ Γαλοπούλα" }, "description": { "en": "Wholewheat toast with turkey and edam cheese.", "el": "Τοστ ολικής άλεσης με γαλοπούλα και τυρί edam." }, "price": "2.40" }
+        { "id": "donut", "name": { "en": "Donut", "el": "Donut" }, "description": { "en": "Donut with ham and edam cheese.", "el": "Donut με ζαμπόν και τυρί edam." }, "price": "3.20" , "image": "/images/menu/cinnamon-roll.jpg" },
+        { "id": "turkey-baguette", "name": { "en": "Turkey Baguette", "el": "Μπαγκέτα Γαλοπούλα" }, "description": { "en": "Baguette with turkey, edam cheese and mayonnaise.", "el": "Μπαγκέτα με γαλοπούλα, τυρί edam και μαγιονέζα." }, "price": "3.20" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "chicken-viennese", "name": { "en": "Chicken Viennese", "el": "Βιεννέζικο Κοτόπουλο" }, "description": { "en": "Viennese bread with chicken, mustard and iceberg.", "el": "Βιεννέζικο ψωμί με κοτόπουλο, μουστάρδα και iceberg." }, "price": "3.60" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "turkey-croissant", "name": { "en": "Turkey Croissant", "el": "Croissant Γαλοπούλα" }, "description": { "en": "Croissant with turkey, edam cheese and mayonnaise.", "el": "Croissant με γαλοπούλα, τυρί edam και μαγιονέζα." }, "price": "3.20" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "ham-toast", "name": { "en": "Ham Toast", "el": "Τοστ Ζαμπόν" }, "description": { "en": "Toast with ham and edam cheese.", "el": "Τοστ με ζαμπόν και τυρί edam." }, "price": "2.50" , "image": "/images/menu/beef-pastrami-baguette.jpg" },
+        { "id": "turkey-toast", "name": { "en": "Turkey Toast", "el": "Τοστ Γαλοπούλα" }, "description": { "en": "Wholewheat toast with turkey and edam cheese.", "el": "Τοστ ολικής άλεσης με γαλοπούλα και τυρί edam." }, "price": "2.40" , "image": "/images/menu/beef-pastrami-baguette.jpg" }
       ]
     },
     {
@@ -126,20 +126,20 @@
           "price": "3.50",
           "image": "/images/menu/soft-cookie.jpg",
           "items": [
-            { "id": "triple-black", "name": { "en": "Triple Black", "el": "Triple Black" }, "description": { "en": "Chocolate cookie with dark, milk & white chocolate chunks.", "el": "Μπισκότο σοκολάτας με κομμάτια dark, milk & white σοκολάτας." } },
-            { "id": "triple-white", "name": { "en": "Triple White", "el": "Triple White" }, "description": { "en": "Vanilla cookie with dark, milk & white chocolate chunks.", "el": "Μπισκότο βανίλιας με κομμάτια dark, milk & white σοκολάτας." } },
+            { "id": "triple-black", "name": { "en": "Triple Black", "el": "Triple Black" }, "description": { "en": "Chocolate cookie with dark, milk & white chocolate chunks.", "el": "Μπισκότο σοκολάτας με κομμάτια dark, milk & white σοκολάτας." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "triple-white", "name": { "en": "Triple White", "el": "Triple White" }, "description": { "en": "Vanilla cookie with dark, milk & white chocolate chunks.", "el": "Μπισκότο βανίλιας με κομμάτια dark, milk & white σοκολάτας." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
             { "id": "red-velvet-cookie", "name": { "en": "Red Velvet", "el": "Red Velvet" }, "description": { "en": "With dark & white chocolate chunks.", "el": "Με κομμάτια dark & white σοκολάτας." }, "image": "/images/menu/soft-cookie-red-velvet.jpg" },
-            { "id": "banoffee", "name": { "en": "Banoffee", "el": "Banoffee" }, "description": { "en": "With biscuit & dark chocolate chunks.", "el": "Με μπισκότο & κομμάτια dark σοκολάτας." } },
-            { "id": "oreo-cookie", "name": { "en": "Oreo", "el": "Oreo" }, "description": { "en": "Vanilla cookie with white & dark chocolate chunks.", "el": "Μπισκότο βανίλιας με κομμάτια white & dark σοκολάτας." } },
-            { "id": "honey-cinnamon", "name": { "en": "Honey & Cinnamon", "el": "Μέλι & Κανέλα" }, "description": { "en": "With oat flakes, cinnamon & raisin.", "el": "Με νιφάδες βρώμης, κανέλα & σταφίδα." } },
-            { "id": "peanut-butter-cookie", "name": { "en": "Peanut Butter", "el": "Φιστικοβούτυρο" }, "description": { "en": "Rich and creamy peanut butter flavor.", "el": "Πλούσια και κρεμώδης γεύση φιστικοβούτυρου." } },
-            { "id": "hazelnut-chocolate-chips", "name": { "en": "Hazelnut & Chocolate Chips", "el": "Φουντούκι & Σοκολάτα" }, "description": { "en": "Hazelnuts and chocolate chunks.", "el": "Φουντούκια και κομμάτια σοκολάτας." } },
-            { "id": "lotus-cookie", "name": { "en": "Lotus", "el": "Lotus" }, "description": { "en": "With lotus cream, lotus crumble & cinnamon.", "el": "Με κρέμα lotus, τρίμμα lotus & κανέλα." } },
-            { "id": "dubai-chocolate-cookie", "name": { "en": "Dubai Chocolate", "el": "Dubai Chocolate" }, "description": { "en": "Aegina peanut paste, kataifi & white chocolate.", "el": "Πάστα φιστικιού Αίγινας, κανταΐφι & λευκή σοκολάτα." } },
-            { "id": "lemon-cookie", "name": { "en": "Lemon", "el": "Λεμόνι" }, "description": { "en": "Lemon-filled cookie.", "el": "Μπισκότο με γέμιση λεμόνι." } },
-            { "id": "bueno-cookie", "name": { "en": "Bueno", "el": "Bueno" }, "description": { "en": "Bueno cookie.", "el": "Μπισκότο Bueno." } },
-            { "id": "kitkat-cookie", "name": { "en": "KitKat", "el": "KitKat" }, "description": { "en": "KitKat cookie.", "el": "Μπισκότο KitKat." } },
-            { "id": "salted-caramel-cookie", "name": { "en": "Salted Caramel", "el": "Salted Caramel" }, "description": { "en": "Salted caramel.", "el": "Salted caramel." } }
+            { "id": "banoffee", "name": { "en": "Banoffee", "el": "Banoffee" }, "description": { "en": "With biscuit & dark chocolate chunks.", "el": "Με μπισκότο & κομμάτια dark σοκολάτας." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "oreo-cookie", "name": { "en": "Oreo", "el": "Oreo" }, "description": { "en": "Vanilla cookie with white & dark chocolate chunks.", "el": "Μπισκότο βανίλιας με κομμάτια white & dark σοκολάτας." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "honey-cinnamon", "name": { "en": "Honey & Cinnamon", "el": "Μέλι & Κανέλα" }, "description": { "en": "With oat flakes, cinnamon & raisin.", "el": "Με νιφάδες βρώμης, κανέλα & σταφίδα." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "peanut-butter-cookie", "name": { "en": "Peanut Butter", "el": "Φιστικοβούτυρο" }, "description": { "en": "Rich and creamy peanut butter flavor.", "el": "Πλούσια και κρεμώδης γεύση φιστικοβούτυρου." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "hazelnut-chocolate-chips", "name": { "en": "Hazelnut & Chocolate Chips", "el": "Φουντούκι & Σοκολάτα" }, "description": { "en": "Hazelnuts and chocolate chunks.", "el": "Φουντούκια και κομμάτια σοκολάτας." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "lotus-cookie", "name": { "en": "Lotus", "el": "Lotus" }, "description": { "en": "With lotus cream, lotus crumble & cinnamon.", "el": "Με κρέμα lotus, τρίμμα lotus & κανέλα." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "dubai-chocolate-cookie", "name": { "en": "Dubai Chocolate", "el": "Dubai Chocolate" }, "description": { "en": "Aegina peanut paste, kataifi & white chocolate.", "el": "Πάστα φιστικιού Αίγινας, κανταΐφι & λευκή σοκολάτα." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "lemon-cookie", "name": { "en": "Lemon", "el": "Λεμόνι" }, "description": { "en": "Lemon-filled cookie.", "el": "Μπισκότο με γέμιση λεμόνι." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "bueno-cookie", "name": { "en": "Bueno", "el": "Bueno" }, "description": { "en": "Bueno cookie.", "el": "Μπισκότο Bueno." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "kitkat-cookie", "name": { "en": "KitKat", "el": "KitKat" }, "description": { "en": "KitKat cookie.", "el": "Μπισκότο KitKat." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "salted-caramel-cookie", "name": { "en": "Salted Caramel", "el": "Salted Caramel" }, "description": { "en": "Salted caramel.", "el": "Salted caramel." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" }
           ]
         },
         {
@@ -147,16 +147,16 @@
           "name": { "en": "Muffins", "el": "Muffins" },
           "price": "3.50",
           "items": [
-            { "id": "muffin-chocolate", "name": { "en": "Chocolate", "el": "Σοκολάτα" }, "description": { "en": "Rich muffin with chocolate filling.", "el": "Πλούσιο muffin με γέμιση σοκολάτας." } },
-            { "id": "muffin-vanilla", "name": { "en": "Vanilla", "el": "Βανίλια" }, "description": { "en": "Fluffy muffin with cream filling.", "el": "Αφράτο muffin με γέμιση κρέμας." } },
-            { "id": "muffin-red-velvet", "name": { "en": "Red Velvet", "el": "Red Velvet" }, "description": { "en": "Soft muffin with cream cheese filling.", "el": "Μαλακό muffin με γέμιση τυρί κρέμα." } },
-            { "id": "muffin-lemon", "name": { "en": "Lemon", "el": "Λεμόνι" }, "description": { "en": "Zesty lemon muffin.", "el": "Muffin λεμονιού." } },
-            { "id": "muffin-pistachio", "name": { "en": "Pistachio", "el": "Φιστίκι" }, "description": { "en": "Nutty pistachio muffin.", "el": "Muffin φιστικιού." } },
-            { "id": "muffin-carrot", "name": { "en": "Carrot", "el": "Καρότο" }, "description": { "en": "Spiced carrot muffin.", "el": "Μπαχαρικωτό muffin καρότου." } },
-            { "id": "muffin-caramel", "name": { "en": "Caramel", "el": "Καραμέλα" }, "description": { "en": "Buttery muffin with caramel pockets.", "el": "Βουτυράτο muffin με καραμέλα." } },
-            { "id": "muffin-apple", "name": { "en": "Apple", "el": "Μήλο" }, "description": { "en": "Apple and cinnamon muffin.", "el": "Muffin μήλου και κανέλας." } },
-            { "id": "muffin-cheesecake", "name": { "en": "Cheesecake", "el": "Cheesecake" }, "description": { "en": "Creamy cheesecake muffin.", "el": "Κρεμώδες muffin cheesecake." } },
-            { "id": "muffin-blueberry", "name": { "en": "Blueberry", "el": "Blueberry" }, "description": { "en": "Classic muffin with juicy blueberries.", "el": "Κλασικό muffin με ζουμερά blueberries." } }
+            { "id": "muffin-chocolate", "name": { "en": "Chocolate", "el": "Σοκολάτα" }, "description": { "en": "Rich muffin with chocolate filling.", "el": "Πλούσιο muffin με γέμιση σοκολάτας." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-vanilla", "name": { "en": "Vanilla", "el": "Βανίλια" }, "description": { "en": "Fluffy muffin with cream filling.", "el": "Αφράτο muffin με γέμιση κρέμας." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-red-velvet", "name": { "en": "Red Velvet", "el": "Red Velvet" }, "description": { "en": "Soft muffin with cream cheese filling.", "el": "Μαλακό muffin με γέμιση τυρί κρέμα." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-lemon", "name": { "en": "Lemon", "el": "Λεμόνι" }, "description": { "en": "Zesty lemon muffin.", "el": "Muffin λεμονιού." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-pistachio", "name": { "en": "Pistachio", "el": "Φιστίκι" }, "description": { "en": "Nutty pistachio muffin.", "el": "Muffin φιστικιού." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-carrot", "name": { "en": "Carrot", "el": "Καρότο" }, "description": { "en": "Spiced carrot muffin.", "el": "Μπαχαρικωτό muffin καρότου." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-caramel", "name": { "en": "Caramel", "el": "Καραμέλα" }, "description": { "en": "Buttery muffin with caramel pockets.", "el": "Βουτυράτο muffin με καραμέλα." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-apple", "name": { "en": "Apple", "el": "Μήλο" }, "description": { "en": "Apple and cinnamon muffin.", "el": "Muffin μήλου και κανέλας." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-cheesecake", "name": { "en": "Cheesecake", "el": "Cheesecake" }, "description": { "en": "Creamy cheesecake muffin.", "el": "Κρεμώδες muffin cheesecake." } , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "muffin-blueberry", "name": { "en": "Blueberry", "el": "Blueberry" }, "description": { "en": "Classic muffin with juicy blueberries.", "el": "Κλασικό muffin με ζουμερά blueberries." } , "image": "/images/menu/cinnamon-roll.jpg" }
           ]
         },
         {
@@ -164,18 +164,18 @@
           "name": { "en": "Cinnamon Rolls", "el": "Cinnamon Rolls" },
           "items": [
             { "id": "classic-roll", "name": { "en": "Classic Roll", "el": "Classic Roll" }, "price": "4.00", "image": "/images/menu/cinnamon-roll.jpg" },
-            { "id": "dubai-roll", "name": { "en": "Dubai", "el": "Dubai" }, "price": "4.50" },
-            { "id": "lotus-roll", "name": { "en": "Lotus", "el": "Lotus" }, "price": "4.50" },
-            { "id": "oreo-roll", "name": { "en": "Oreo", "el": "Oreo" }, "price": "4.50" }
+            { "id": "dubai-roll", "name": { "en": "Dubai", "el": "Dubai" }, "price": "4.50" , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "lotus-roll", "name": { "en": "Lotus", "el": "Lotus" }, "price": "4.50" , "image": "/images/menu/cinnamon-roll.jpg" },
+            { "id": "oreo-roll", "name": { "en": "Oreo", "el": "Oreo" }, "price": "4.50", "image": "/images/menu/cinnamon-roll.jpg" }
           ]
         },
         {
           "id": "souffle-bites",
           "name": { "en": "Soufflé Bites", "el": "Soufflé Bites" },
           "items": [
-            { "id": "souffle-chocolate", "name": { "en": "Chocolate", "el": "Σοκολάτα" }, "price": "2.40" },
-            { "id": "souffle-vanilla", "name": { "en": "Vanilla", "el": "Βανίλια" }, "price": "2.40" },
-            { "id": "souffle-red-velvet", "name": { "en": "Red Velvet", "el": "Red Velvet" }, "price": "2.40" }
+            { "id": "souffle-chocolate", "name": { "en": "Chocolate", "el": "Σοκολάτα" }, "price": "2.40" , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "souffle-vanilla", "name": { "en": "Vanilla", "el": "Βανίλια" }, "price": "2.40" , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "souffle-red-velvet", "name": { "en": "Red Velvet", "el": "Red Velvet" }, "price": "2.40" , "image": "/images/menu/soft-cookie-red-velvet.jpg" }
           ]
         },
         {
@@ -184,12 +184,12 @@
           "unit": { "en": "100gr", "el": "100γρ" },
           "price": "2.50",
           "items": [
-            { "id": "cereal-peanut-butter", "name": { "en": "Peanut Butter", "el": "Φιστικοβούτυρο" }, "description": { "en": "Raw. With oats, honey, chocolate & peanut butter coating.", "el": "Raw. Με βρώμη, μέλι, σοκολάτα & επικάλυψη φιστικοβούτυρου." } },
-            { "id": "cereal-peanut-banana", "name": { "en": "Peanut Butter & Banana", "el": "Φιστικοβούτυρο & Μπανάνα" }, "description": { "en": "Raw. With oats, honey, cranberry, bitter chocolate chips, banana chips, salt, peanut butter & aromatic flavorings.", "el": "Raw. Με βρώμη, μέλι, cranberry, πικρή σοκολάτα, τσιπς μπανάνας, αλάτι, φιστικοβούτυρο & αρωματικά." } },
-            { "id": "cereal-quinoa", "name": { "en": "Quinoa", "el": "Κινόα" }, "description": { "en": "Baked. With quinoa flour, buckwheat flour, rice flour, coconut sugar, guarana, hazelnut, peanut, almond, 70% dark chocolate. Vegan friendly.", "el": "Ψητό. Με αλεύρι κινόα, φαγόπυρο, αλεύρι ρυζιού, ζάχαρη καρύδας, γκουαρανά, φουντούκι, φιστίκι, αμύγδαλο, 70% dark σοκολάτα. Vegan." }, "tags": ["vegan"] },
-            { "id": "cereal-red-velvet-quinoa", "name": { "en": "Red Velvet Quinoa", "el": "Red Velvet Κινόα" }, "description": { "en": "Baked. With quinoa flour, buckwheat flour, rice flour, coconut sugar, wildflower & red fruit juice, natural beetroot juice, hazelnut, peanut, almonds & cranberries.", "el": "Ψητό. Με αλεύρι κινόα, φαγόπυρο, αλεύρι ρυζιού, ζάχαρη καρύδας, χυμό αγριολούλουδων & κόκκινων φρούτων, φυσικό χυμό παντζαριού, φουντούκι, φιστίκι, αμύγδαλα & cranberries." } },
-            { "id": "cereal-pistachio", "name": { "en": "Pistachio", "el": "Φιστίκι" }, "description": { "en": "A nutty pistachio bar for a rich, satisfying snack.", "el": "Μπάρα φιστικιού για ένα πλούσιο, χορταστικό σνακ." } },
-            { "id": "cereal-milk-chocolate-orange", "name": { "en": "Milk Chocolate & Orange", "el": "Σοκολάτα Γάλακτος & Πορτοκάλι" }, "description": { "en": "Raw. With pumpkin seeds, flaxseed, chia seeds, peanut butter, oats, peanut, almond, 70% pure cocoa, sesame, honey & sunflower seeds.", "el": "Raw. Με σπόρους κολοκύθας, λιναρόσπορο, chia, φιστικοβούτυρο, βρώμη, φιστίκι, αμύγδαλο, 70% κακάο, σουσάμι, μέλι & ηλιόσπορο." } }
+            { "id": "cereal-peanut-butter", "name": { "en": "Peanut Butter", "el": "Φιστικοβούτυρο" }, "description": { "en": "Raw. With oats, honey, chocolate & peanut butter coating.", "el": "Raw. Με βρώμη, μέλι, σοκολάτα & επικάλυψη φιστικοβούτυρου." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "cereal-peanut-banana", "name": { "en": "Peanut Butter & Banana", "el": "Φιστικοβούτυρο & Μπανάνα" }, "description": { "en": "Raw. With oats, honey, cranberry, bitter chocolate chips, banana chips, salt, peanut butter & aromatic flavorings.", "el": "Raw. Με βρώμη, μέλι, cranberry, πικρή σοκολάτα, τσιπς μπανάνας, αλάτι, φιστικοβούτυρο & αρωματικά." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "cereal-quinoa", "name": { "en": "Quinoa", "el": "Κινόα" }, "description": { "en": "Baked. With quinoa flour, buckwheat flour, rice flour, coconut sugar, guarana, hazelnut, peanut, almond, 70% dark chocolate. Vegan friendly.", "el": "Ψητό. Με αλεύρι κινόα, φαγόπυρο, αλεύρι ρυζιού, ζάχαρη καρύδας, γκουαρανά, φουντούκι, φιστίκι, αμύγδαλο, 70% dark σοκολάτα. Vegan." }, "tags": ["vegan"] , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "cereal-red-velvet-quinoa", "name": { "en": "Red Velvet Quinoa", "el": "Red Velvet Κινόα" }, "description": { "en": "Baked. With quinoa flour, buckwheat flour, rice flour, coconut sugar, wildflower & red fruit juice, natural beetroot juice, hazelnut, peanut, almonds & cranberries.", "el": "Ψητό. Με αλεύρι κινόα, φαγόπυρο, αλεύρι ρυζιού, ζάχαρη καρύδας, χυμό αγριολούλουδων & κόκκινων φρούτων, φυσικό χυμό παντζαριού, φουντούκι, φιστίκι, αμύγδαλα & cranberries." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "cereal-pistachio", "name": { "en": "Pistachio", "el": "Φιστίκι" }, "description": { "en": "A nutty pistachio bar for a rich, satisfying snack.", "el": "Μπάρα φιστικιού για ένα πλούσιο, χορταστικό σνακ." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" },
+            { "id": "cereal-milk-chocolate-orange", "name": { "en": "Milk Chocolate & Orange", "el": "Σοκολάτα Γάλακτος & Πορτοκάλι" }, "description": { "en": "Raw. With pumpkin seeds, flaxseed, chia seeds, peanut butter, oats, peanut, almond, 70% pure cocoa, sesame, honey & sunflower seeds.", "el": "Raw. Με σπόρους κολοκύθας, λιναρόσπορο, chia, φιστικοβούτυρο, βρώμη, φιστίκι, αμύγδαλο, 70% κακάο, σουσάμι, μέλι & ηλιόσπορο." } , "image": "/images/menu/soft-cookie-red-velvet.jpg" }
           ]
         },
         {
@@ -197,12 +197,12 @@
           "name": { "en": "Cakes", "el": "Κέικ" },
           "price": "3.80",
           "items": [
-            { "id": "cake-bueno", "name": { "en": "Bueno", "el": "Bueno" } },
-            { "id": "cake-oreo", "name": { "en": "Oreo", "el": "Oreo" } },
-            { "id": "cake-snickers", "name": { "en": "Snickers", "el": "Snickers" } },
+            { "id": "cake-bueno", "name": { "en": "Bueno", "el": "Bueno" } , "image": "/images/menu/cake-carrot.jpg" },
+            { "id": "cake-oreo", "name": { "en": "Oreo", "el": "Oreo" } , "image": "/images/menu/cake-carrot.jpg" },
+            { "id": "cake-snickers", "name": { "en": "Snickers", "el": "Snickers" } , "image": "/images/menu/cake-carrot.jpg" },
             { "id": "cake-carrot", "name": { "en": "Carrot", "el": "Καρότο" }, "image": "/images/menu/cake-carrot.jpg" },
-            { "id": "cake-ferrero", "name": { "en": "Ferrero", "el": "Ferrero" } },
-            { "id": "cake-banana-bread", "name": { "en": "Banana Bread", "el": "Banana Bread" } }
+            { "id": "cake-ferrero", "name": { "en": "Ferrero", "el": "Ferrero" } , "image": "/images/menu/cake-carrot.jpg" },
+            { "id": "cake-banana-bread", "name": { "en": "Banana Bread", "el": "Banana Bread" } , "image": "/images/menu/cake-carrot.jpg" }
           ]
         }
       ]
@@ -211,19 +211,19 @@
       "id": "salty-snacks",
       "name": { "en": "Salty Snacks", "el": "Αλμυρά" },
       "items": [
-        { "id": "regato-cheese-breadsticks", "name": { "en": "Regato Cheese Bread Sticks 150gr", "el": "Κριτσίνια Τυρί Ρέγκατο 150γρ" }, "price": "4.00" }
+        { "id": "regato-cheese-breadsticks", "name": { "en": "Regato Cheese Bread Sticks 150gr", "el": "Κριτσίνια Τυρί Ρέγκατο 150γρ" }, "price": "4.00" , "image": "/images/menu/beef-pastrami-baguette.jpg" }
       ]
     },
     {
       "id": "beers-wines",
       "name": { "en": "Beers / Wines", "el": "Μπύρες / Κρασιά" },
       "items": [
-        { "id": "estrella-330", "name": { "en": "Estrella Barcelona Lager 330ml", "el": "Estrella Barcelona Lager 330ml" }, "price": "3.50" },
-        { "id": "estrella-500", "name": { "en": "Estrella Barcelona Lager 500ml", "el": "Estrella Barcelona Lager 500ml" }, "price": "5.00" },
-        { "id": "corona-cafe", "name": { "en": "Corona 330ml", "el": "Corona 330ml" }, "price": "5.00" },
-        { "id": "dry-red-wine-cafe", "name": { "en": "Dry Red Wine 187ml", "el": "Ξηρό Κόκκινο Κρασί 187ml" }, "price": "6.00" },
-        { "id": "dry-white-wine-cafe", "name": { "en": "Dry White Wine 187ml", "el": "Ξηρό Λευκό Κρασί 187ml" }, "price": "6.00" },
-        { "id": "sparkling-wine-cafe", "name": { "en": "Sparkling Wine 187ml", "el": "Αφρώδης Οίνος 187ml" }, "price": "6.00" }
+        { "id": "estrella-330", "name": { "en": "Estrella Barcelona Lager 330ml", "el": "Estrella Barcelona Lager 330ml" }, "price": "3.50" , "image": "/images/spirits/corona.jpg" },
+        { "id": "estrella-500", "name": { "en": "Estrella Barcelona Lager 500ml", "el": "Estrella Barcelona Lager 500ml" }, "price": "5.00" , "image": "/images/spirits/corona.jpg" },
+        { "id": "corona-cafe", "name": { "en": "Corona 330ml", "el": "Corona 330ml" }, "price": "5.00" , "image": "/images/spirits/corona.jpg" },
+        { "id": "dry-red-wine-cafe", "name": { "en": "Dry Red Wine 187ml", "el": "Ξηρό Κόκκινο Κρασί 187ml" }, "price": "6.00" , "image": "/images/menu/wine-red.jpg" },
+        { "id": "dry-white-wine-cafe", "name": { "en": "Dry White Wine 187ml", "el": "Ξηρό Λευκό Κρασί 187ml" }, "price": "6.00" , "image": "/images/menu/wine-white.jpg" },
+        { "id": "sparkling-wine-cafe", "name": { "en": "Sparkling Wine 187ml", "el": "Αφρώδης Οίνος 187ml" }, "price": "6.00" , "image": "/images/menu/sparkling-white.jpg" }
       ],
       "notes": {
         "en": "Please inform your waiter of any allergies or dietary restrictions before ordering. 13% or 24% VAT included depending on product.",

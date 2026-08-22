@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
@@ -55,7 +55,9 @@ function MenuViewInner({
       />
       <div className="relative mx-auto max-w-3xl px-5 pb-10 pt-8 md:pb-16 md:pt-14">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-60">{dict.menu.sub}</p>
-        <h1 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--on-surface)" }}>
+        {/* PHASE N — Section 4: Majesty removed from the "Menu" heading
+            (explicit brief target). */}
+        <h1 className="mt-2 text-4xl font-semibold tracking-tight md:text-5xl" style={{ color: "var(--on-surface)" }}>
           {dict.menu.heading}
         </h1>
         <WobbleDivider className="my-6 max-w-[120px]" color="var(--accent)" />

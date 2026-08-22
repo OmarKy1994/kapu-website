@@ -1,5 +1,4 @@
-﻿import Image from "next/image";
-import type { ReactNode } from "react";
+﻿﻿import type { ReactNode } from "react";
 
 /**
  * BEAT 1 — the true full-bleed hero the Creative Reset calls for: one
@@ -13,10 +12,40 @@ import type { ReactNode } from "react";
  * itself. Majesty (Latin-only, no Greek glyph coverage) is reserved for the
  * short English translation beneath it on the /en route — a real, already
  * -localized line, not invented copy.
+ *
+ * PHASE N — Section 1: genuinely responsive (art-directed) hero photography.
+ * Desktop/tablet keeps the original team/storefront photo (`src`) at its
+ * existing, already-tuned crop. Mobile switches to a dedicated portrait
+ * photo (`mobileSrc`) — a different photograph, not a resized crop of the
+ * same image — so this can't be done with next/image's built-in
+ * responsive `sizes`/`srcSet` (that only varies resolution, not which
+ * photo). A native <picture>/<source media> swap is the only way to do
+ * true art direction without JS viewport detection, and the browser only
+ * ever fetches the one image that matches, so there's no double-load.
+ * next/image's own <Image> component doesn't support multiple <source>
+ * elements, so the URLs below are hand-built against Next's image
+ * optimizer endpoint (`/_next/image?url=...&w=...&q=...`) — the same
+ * endpoint <Image> itself would generate — using only widths from this
+ * project's default `deviceSizes` and the `q` values allow-listed in
+ * next.config.ts's `images.qualities` ([75, 92]), so these requests hit
+ * the optimizer's cache exactly like a normal <Image> would.
  */
+const DEVICE_WIDTHS = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
+const MOBILE_WIDTHS = [640, 750, 828, 1080];
+const IMAGE_QUALITY = 92;
+
+function optimizedUrl(src: string, width: number, quality = IMAGE_QUALITY) {
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality}`;
+}
+
+function buildSrcSet(src: string, widths: number[]) {
+  return widths.map((w) => `${optimizedUrl(src, w)} ${w}w`).join(", ");
+}
+
 export default function FullBleedHero({
   src,
   alt,
+  mobileSrc,
   kicker,
   greekPhrase,
   englishTranslation,
@@ -25,7 +54,17 @@ export default function FullBleedHero({
   children,
 }: {
   src: string;
+  // Single alt is a real constraint of <picture>: only the fallback <img>
+  // carries an alt attribute, and it's what AT reads regardless of which
+  // <source> the browser actually painted. There's no server-side way to
+  // know the client's viewport ahead of render, and adding JS to pick one
+  // is exactly what this section rules out. `alt` is written to stay true
+  // across both photos (team + storefront signage on desktop, the same
+  // hanging shop sign on mobile) rather than describing either one's full
+  // detail — see the call site in app/[locale]/page.tsx.
   alt: string;
+  /** Dedicated portrait photo shown below the md breakpoint (767px). */
+  mobileSrc: string;
   kicker: string;
   greekPhrase: string;
   englishTranslation?: string;
@@ -52,22 +91,53 @@ export default function FullBleedHero({
         transform: "translateZ(0)",
       }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority
-        sizes="100vw"
-        quality={90}
-        // Mobile crop confirmed live: at mobile widths this photo can only
-        // show ~30% of its width at once (object-fit: cover has to scale to
-        // the tall, narrow viewport height), so the centered 50% position
-        // that works on desktop lands on the two staff in the middle and
-        // crops both owners at the outer edges. Re-aimed to 82% on small
-        // screens so the crop includes an owner instead of only staff,
-        // confirmed via a live mobile-viewport check. Desktop is unchanged.
-        className="object-cover object-[82%_18%] md:object-[50%_18%]"
+      {/* Preserves the LCP preload the old single <Image priority> gave us
+          for free — React/Next hoist <link> tags rendered anywhere in a
+          Server Component to <head> automatically. Each preload carries the
+          same `media` condition as its matching <source>/crop below, so the
+          browser only ever fetches the one that applies — no double-load. */}
+      <link
+        rel="preload"
+        as="image"
+        href={optimizedUrl(mobileSrc, MOBILE_WIDTHS[MOBILE_WIDTHS.length - 1])}
+        imageSrcSet={buildSrcSet(mobileSrc, MOBILE_WIDTHS)}
+        imageSizes="100vw"
+        media="(max-width: 767px)"
+        fetchPriority="high"
       />
+      <link
+        rel="preload"
+        as="image"
+        href={optimizedUrl(src, DEVICE_WIDTHS[DEVICE_WIDTHS.length - 1])}
+        imageSrcSet={buildSrcSet(src, DEVICE_WIDTHS)}
+        imageSizes="100vw"
+        media="(min-width: 768px)"
+        fetchPriority="high"
+      />
+      <picture>
+        {/* Mobile (<768px): the dedicated portrait photo. Verified live
+            (injected against the real deployed asset at 320–428px widths,
+            with the scrim applied) that a plain centered crop reproduces
+            the photo's own composition correctly — full sign on top, full
+            cup+hand at bottom — at every common phone size, so unlike the
+            old team photo this needs no shifted object-position. */}
+        <source
+          media="(max-width: 767px)"
+          srcSet={buildSrcSet(mobileSrc, MOBILE_WIDTHS)}
+          sizes="100vw"
+        />
+        <img
+          src={optimizedUrl(src, DEVICE_WIDTHS[DEVICE_WIDTHS.length - 1])}
+          srcSet={buildSrcSet(src, DEVICE_WIDTHS)}
+          sizes="100vw"
+          alt={alt}
+          fetchPriority="high"
+          // Desktop crop is untouched from Phase M (object-[50%_18%]).
+          // Mobile crop is the dedicated photo's own natural centering —
+          // see the <source> comment above.
+          className="absolute inset-0 h-full w-full object-cover object-center md:object-[50%_18%]"
+        />
+      </picture>
       <div
         className="absolute inset-0"
         style={{

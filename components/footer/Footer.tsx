@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { SiteDict } from "@/lib/content";
@@ -51,19 +51,22 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: SiteDic
     >
       <Bougainvillea variant="pair" diagonal="tr-bl" width={820} className="opacity-55" />
       <div className="relative mx-auto max-w-6xl px-5">
-        {/* Phase F: the printed menu's own back-page logo lockup (page 7) is
-            drawn entirely in pink, not teal — the footer is the site's
-            closest equivalent to that page (contact box + social row), so
-            it's the one wordmark instance that follows the print colorway.
-            The icon mark stays the site's existing teal asset; only the
-            text wordmark color changes, matching the pink used everywhere
-            else editorial/expressive vs. teal everywhere functional. */}
-        <Link href={base} className="inline-flex items-center gap-2" aria-label="KAPU — home">
-          <span className="relative h-9 w-11">
-            <Image src="/images/logo/kapu-icon.png" alt="" fill sizes="44px" style={{ objectFit: "contain" }} />
-          </span>
-          <span className="font-display text-xl" style={{ color: "var(--accent)" }}>
-            KAPU
+        {/* PHASE N — Section 5A: was icon PNG + a live "KAPU" text span
+            standing in for a wordmark (the same pattern Phase I already
+            flagged and fixed in Nav.tsx). Replaced with the actual full
+            logo asset (icon + wordmark already lettered together in one
+            image, same file Nav.tsx uses) instead of recreating the text —
+            aspect-ratio wrapper (not a fixed width+height) so it can't be
+            squashed or stretched at this footer's smaller scale. */}
+        <Link href={base} className="inline-flex items-center" aria-label="KAPU — home">
+          <span className="relative block h-12" style={{ aspectRatio: "1454 / 1584" }}>
+            <Image
+              src="/images/logo/kapu-logo-full.png"
+              alt=""
+              fill
+              sizes="44px"
+              style={{ objectFit: "contain" }}
+            />
           </span>
         </Link>
         <p lang="el" className="mt-5 font-display text-2xl md:text-3xl" style={{ color: "var(--accent)" }}>
@@ -183,7 +186,8 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: SiteDic
         <div className="kapu-panel mt-12 grid gap-6 border-2 p-6 sm:grid-cols-2" style={{ borderColor: "var(--brand)" }}>
           {locations.map((loc) => (
             <div key={loc.slug}>
-              <p className="font-display text-lg" style={{ color: "var(--brand)" }}>
+              {/* PHASE N — Section 5B: Majesty removed from location names. */}
+              <p className="text-lg font-semibold tracking-tight" style={{ color: "var(--brand)" }}>
                 {loc.name}
               </p>
               <p className="mt-1 text-sm opacity-75">{loc.address}</p>

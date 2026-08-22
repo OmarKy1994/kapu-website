@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { SiteDict } from "@/lib/content";
@@ -56,7 +56,8 @@ export default function LocationCard({
         )
       )}
       <div className="pt-5">
-        <h2 className="font-display text-2xl" style={{ color: "var(--accent)" }}>
+        {/* PHASE N — Section 4: Majesty removed from location names. */}
+        <h2 className="text-2xl font-semibold tracking-tight" style={{ color: "var(--accent)" }}>
           {location.name}
         </h2>
         <WobbleDivider className="my-3 max-w-[80px]" color="var(--border-soft)" />

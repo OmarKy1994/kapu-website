@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 /**
  * The café/bar switch, styled after flipping a physical two-sided café sign
@@ -33,7 +33,11 @@ export default function MenuModeSwitch({
             type="button"
             onClick={() => onChange(value)}
             aria-pressed={active}
-            className="min-h-[44px] px-8 py-2.5 font-display text-lg tracking-wide transition-transform duration-200"
+            // PHASE N — Section 4: Majesty removed from the Café/Bar toggle
+            // (explicit brief target) — font-semibold in the site's own
+            // body face replaces it as a plain, legible control label; the
+            // skew/active-state transform logic below is untouched.
+            className="min-h-[44px] px-8 py-2.5 text-base font-semibold tracking-wide transition-transform duration-200"
             style={{
               // Fixed teal-deep fill regardless of café/bar (day/night) mode —
               // the bar-mode --brand token resolves to a light mint-green

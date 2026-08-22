@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import type { CSSProperties } from "react";
 
 /**
@@ -90,6 +90,34 @@ const CORNER_STYLE: Record<Corner, CSSProperties> = {
   "bottom-right": { bottom: 0, right: 0 },
 };
 
+// PHASE N — Section 5C/6 fix. Live-rendered both the footer (5C, opacity-55
+// — the box edge was plainly visible) and the menu page (Section 6,
+// opacity-15/20/30/40 — same hard rectangle, just faint enough at that low
+// opacity to hide it) before touching anything. Root cause confirmed by
+// temporarily forcing opacity:1 on the live deployed page: the crop window
+// itself (overflow-hidden + a same-shaped rectangle, by Phase H's own
+// design — see CROP_RATIO/FOCUS_ZOOM above) always ends in a hard cut where
+// it does NOT bleed off the section, because the crop intentionally lands
+// mid-branch, not on empty transparent margin. That's true regardless of
+// corner or variant, so it's fixed once, here, for every "corner"/"pair"
+// instance — not per call site. A radial-gradient CSS mask anchored at the
+// corner's own OUTWARD point (the one already bleeding off-canvas, so
+// fading it further costs nothing) tapers the box to transparent toward
+// its INWARD point instead of cutting there — the existing crop/scale/
+// position math is untouched, this only softens how the box's own edge
+// meets the page. Ellipse (not circle) so the taper matches this box's own
+// CROP_RATIO instead of assuming a square.
+const MASK_ANCHOR: Record<Corner, string> = {
+  "top-left": "0% 0%",
+  "top-right": "100% 0%",
+  "bottom-left": "0% 100%",
+  "bottom-right": "100% 100%",
+};
+
+function cornerMask(corner: Corner): string {
+  return `radial-gradient(ellipse at ${MASK_ANCHOR[corner]}, black 55%, transparent 100%)`;
+}
+
 function Branch({
   corner,
   focus = "center",
@@ -148,6 +176,10 @@ function Branch({
         aspectRatio: `${CROP_RATIO}`,
         opacity,
         transform: translate + mirror,
+        // PHASE N — see cornerMask's comment: feathers the box's inward
+        // edge instead of cutting it.
+        maskImage: cornerMask(corner),
+        WebkitMaskImage: cornerMask(corner),
       }}
     >
       <Image
