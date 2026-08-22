@@ -4,7 +4,6 @@ import type { Locale } from "@/lib/i18n";
 import type { SiteDict } from "@/lib/content";
 import { getLocations } from "@/lib/content";
 import WobbleDivider from "@/components/motifs/WobbleDivider";
-import Bougainvillea from "@/components/motifs/Bougainvillea";
 
 /** Small, hand-drawn-weight glyphs — not a full icon library, just enough
  * line to read as "Instagram" / "Facebook" inside a pink circular badge,
@@ -38,6 +37,100 @@ function TikTokGlyph() {
   );
 }
 
+/**
+ * PHASE O — footer floral redesign.
+ *
+ * Phase N's fix (a `pair` Bougainvillea instance masked at each corner with a
+ * radial gradient) still read, on live inspection, as a rectangular photo of
+ * flowers parked in two corners: a soft-edged sticker, not something grown
+ * into the page. The corner box's own top/bottom edges were still straight
+ * lines the mask didn't reach, the two corners mirrored each other into a
+ * symmetrical "frame," and at mobile widths the same box scaled down into a
+ * small accidental smudge near the fine print rather than a deliberate
+ * composition.
+ *
+ * This replaces that with two structurally different pieces, validated live
+ * against the real bougainvillea-source.png (see phase-o report §2 for the
+ * strategies considered):
+ *
+ *  - FooterFloralBand: a low, wide strip that sits ABOVE the footer's own
+ *    mint background, in the normal document flow (not layered on top of
+ *    content) — a soft-edged (linear mask, top+bottom feather) glimpse of
+ *    the branch at the seam between the last page section and the footer,
+ *    the "organic border/interruption" the brief asks for rather than a
+ *    hard color-block boundary.
+ *  - EdgeBloom (x2): large fragments anchored at the true left/right edges
+ *    of the layout, translated mostly off-canvas, each faded on every side
+ *    by a radial mask anchored at its own outward point — the source of the
+ *    old "rectangular sticker" complaint. Desktop and mobile use different
+ *    vertical placements (not just a scaled-down copy of the same layout):
+ *    desktop reads left-top / right-bottom; mobile flips to right-top /
+ *    left-bottom, since the corner nearer the credit line got crowded when
+ *    tested at the old bottom-anchored position on a tall mobile footer.
+ *
+ * The footer's info architecture, full logo, links, contact panel, and
+ * color system are all unchanged — only the floral treatment and the
+ * footer's own layout wrapper (split into a band + a solid-mint content
+ * area, instead of one bordered box) changed.
+ */
+function FooterFloralBand() {
+  return (
+    <div aria-hidden="true" className="relative h-[110px] w-full overflow-hidden md:h-[170px]">
+      <Image
+        src="/images/logo/bougainvillea-source.png"
+        alt=""
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+          objectPosition: "50% 40%",
+          transform: "scale(1.3)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 35%, black 68%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 35%, black 68%, transparent 100%)",
+        }}
+      />
+    </div>
+  );
+}
+
+function EdgeBloom({
+  side,
+  focus,
+  posClass,
+  sizeClass,
+}: {
+  side: "left" | "right";
+  focus: string;
+  posClass: string;
+  sizeClass: string;
+}) {
+  // Anchor the fade at the fragment's own outward point (the edge already
+  // bleeding off-canvas) so the taper costs nothing there and instead eats
+  // into the box's inward/top/bottom edges — the same idea as
+  // Bougainvillea.tsx's cornerMask, but a wide ellipse anchored at a true
+  // viewport edge rather than a section corner.
+  const anchor = side === "left" ? "0% 30%" : "100% 78%";
+  return (
+    <span
+      aria-hidden="true"
+      className={`pointer-events-none absolute select-none ${posClass} ${sizeClass}`}
+      style={{
+        maskImage: `radial-gradient(ellipse 70% 65% at ${anchor}, black 40%, transparent 78%)`,
+        WebkitMaskImage: `radial-gradient(ellipse 70% 65% at ${anchor}, black 40%, transparent 78%)`,
+      }}
+    >
+      <Image
+        src="/images/logo/bougainvillea-source.png"
+        alt=""
+        fill
+        sizes="(min-width: 768px) 560px, 260px"
+        style={{ objectFit: "cover", objectPosition: focus, transform: "scale(1.3)" }}
+      />
+    </span>
+  );
+}
+
 export default function Footer({ locale, dict }: { locale: Locale; dict: SiteDict }) {
   const base = `/${locale}`;
   const locations = getLocations();
@@ -46,11 +139,31 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: SiteDic
   return (
     <footer
       data-mode="day"
-      className="relative overflow-hidden border-t pb-24 pt-16 md:pb-16"
-      style={{ backgroundColor: "var(--kapu-mint)", color: "var(--on-surface)", borderColor: "var(--border-soft)" }}
+      className="relative border-t"
+      style={{ color: "var(--on-surface)", borderColor: "var(--border-soft)" }}
     >
-      <Bougainvillea variant="pair" diagonal="tr-bl" width={820} className="opacity-55" />
-      <div className="relative mx-auto max-w-6xl px-5">
+      <FooterFloralBand />
+      <div
+        className="relative overflow-hidden pb-24 pt-16 md:pb-16"
+        style={{ backgroundColor: "var(--kapu-mint)" }}
+      >
+        {/* Desktop: stem enters top-left, bloom mass exits bottom-right —
+            asymmetric, not a mirrored pair. Mobile flips to right-top /
+            left-bottom (see the component comment above) since a tall
+            stacked mobile footer crowded the credit line otherwise. */}
+        <EdgeBloom
+          side="left"
+          focus="6% 55%"
+          posClass="-left-[90px] bottom-10 md:bottom-auto md:-left-[180px] md:top-[-30px]"
+          sizeClass="w-[230px] h-[210px] md:w-[460px] md:h-[420px]"
+        />
+        <EdgeBloom
+          side="right"
+          focus="88% 30%"
+          posClass="-right-[100px] top-5 md:top-auto md:-right-[200px] md:bottom-[-40px]"
+          sizeClass="w-[260px] h-[230px] md:w-[560px] md:h-[480px]"
+        />
+        <div className="relative mx-auto max-w-6xl px-5">
         {/* PHASE N — Section 5A: was icon PNG + a live "KAPU" text span
             standing in for a wordmark (the same pattern Phase I already
             flagged and fixed in Nav.tsx). Replaced with the actual full
@@ -223,6 +336,7 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: SiteDic
             </a>
           </span>
         </p>
+        </div>
       </div>
     </footer>
   );
