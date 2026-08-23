@@ -29,7 +29,6 @@ export default function Placeholder({
   locale,
   labelPrefix,
   temporaryLabel,
-  priority,
   className = "",
 }: {
   subject: LocalizedString;
@@ -37,7 +36,6 @@ export default function Placeholder({
   locale: Locale;
   labelPrefix: string;
   temporaryLabel: string;
-  priority?: "P0" | "P1" | "P2";
   className?: string;
 }) {
   return (
@@ -62,9 +60,7 @@ export default function Placeholder({
       <p className="mt-2 max-w-xs text-sm font-medium" style={{ color: "var(--on-surface)", opacity: 0.85 }}>
         {subject[locale]}
       </p>
-      {priority ? (
-        <p className="mt-3 text-[11px] uppercase tracking-wider opacity-50">{priority}</p>
-      ) : null}
+      <p className="mt-3 max-w-xs text-[11px] italic opacity-50">{temporaryLabel}</p>
     </div>
   );
 }

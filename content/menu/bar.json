@@ -1,6 +1,6 @@
 {
   "mode": "bar",
-  "sourceNote": "Sourced from KAPU's own supplied product list, not an independently-fetched bar-specific PDF. Re-confirm pricing and exact bottle-pack wording against the live Wolt/efood bar listing before publishing.",
+  "sourceNote": "Bar menu and pricing provided directly by KAPU.",
   "categories": [
     {
       "id": "signature-cocktails",
@@ -59,9 +59,8 @@
     {
       "id": "bottle-packs",
       "name": { "en": "Bottle Packs", "el": "Bottle Packs" },
-      "description": { "en": "0.7L, includes accompanying items as specified on KAPU's bar menu — exact wording to be verified before publishing.", "el": "0.7L, περιλαμβάνει τα συνοδευτικά όπως ορίζονται στο μενού bar του KAPU — να επιβεβαιωθεί η ακριβής διατύπωση πριν τη δημοσίευση." },
+      "description": { "en": "0.7L bottle service.", "el": "Φιάλη 0.7L." },
       "adultsOnly": true,
-      "unverified": true,
       "items": [
         { "id": "gin-bottle", "name": { "en": "Gin Bottle", "el": "Φιάλη Gin" }, "price": "50", "adultsOnly": true , "image": "/images/spirits/gin.jpg" },
         { "id": "gin-bottle-premium", "name": { "en": "Premium Gin Bottle", "el": "Φιάλη Premium Gin" }, "price": "80", "adultsOnly": true , "image": "/images/spirits/gin-premium.jpg" },

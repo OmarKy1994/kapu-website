@@ -2,7 +2,8 @@
   "meta": {
     "siteName": "KAPU",
     "titleSuffix": "KAPU — Athens",
-    "defaultDescription": "KAPU is a neighborhood café and cocktail bar in Kypseli and Kallithea, Athens — coffee and bakery by day, tiki-influenced cocktails by night."
+    "homeTitle": "KAPU | Coffee, Food & Cocktails in Athens — Kypseli & Kallithea",
+    "defaultDescription": "KAPU is a neighborhood café and cocktail bar in Athens, with locations in Kypseli and Kallithea. Discover coffee, food, cocktails, menus, opening hours and delivery."
   },
   "nav": {
     "menu": "Menu",
@@ -18,24 +19,32 @@
   },
   "home": {
     "heroKicker": "KAPU · Kypseli & Kallithea, Athens",
+    "heroHeading": "Coffee by day. Cocktails after dark.",
     "heroPhraseEl": "Πάμε #kapu να τα πούμε;",
     "heroPhraseTranslation": "Come through, let's catch up.",
-    "heroSub": "One neighborhood corner. Coffee by day, cocktails after dark — same place, different light.",
+    "heroSub": "KAPU is your neighborhood café and bar in Kypseli and Kallithea, Athens — serving coffee, food and something worth staying for.",
+    "heroMenuCta": "See the menu",
+    "heroLocationsCta": "Find your KAPU",
     "dayEyebrow": "By day",
-    "dayHeading": "Coffee, pastry, and the neighborhood",
-    "dayBody": "Fresh brew, soft cookies, sandwiches and sweets — the KAPU that opens the day, mint walls and bougainvillea light.",
-    "menuPreviewCta": "See the café menu",
+    "dayHeading": "Coffee, breakfast, pastry & good company.",
+    "dayBody": "Start with freshly brewed coffee, sandwiches, cookies and sweets — made for slow mornings, quick stops and everything in between.",
+    "menuPreviewCta": "Explore the café menu",
     "locationsEyebrow": "Two corners, one KAPU",
     "locationsHeading": "Find Your KAPU",
     "locationsBody": "Kypseli and Kallithea are two real places, not two copies of the same page.",
     "transitionLabel": "As the light changes —",
     "nightEyebrow": "After dark",
-    "nightHeading": "KAPU isn't only coffee",
-    "nightBody": "Tiki glassware, signature cocktails invented in-house, and a room that gets a little more intimate once the sun goes down.",
-    "cocktailsCta": "See the bar menu",
+    "nightHeading": "Stay for the night.",
+    "nightBody": "When the sun goes down, KAPU Kypseli turns into a cocktail bar with signature drinks, tiki glassware and a different kind of energy.",
+    "cocktailsCta": "Explore the bar menu",
     "orderEyebrow": "Ready when you are",
-    "orderHeading": "Order online",
-    "orderBody": "KAPU delivers through Wolt and efood, and Box where confirmed — pick your platform.",
+    "orderHeading": "KAPU delivered to your door.",
+    "orderBody": "Craving KAPU at home? Order from your nearest location through your delivery platform.",
+    "trustHeading": "Loved by the neighborhood",
+    "trustBody": "Real ratings from the platforms our customers already use.",
+    "trustReviewsCta": "Read Google reviews",
+    "aboutHeading": "About KAPU",
+    "aboutBody": "KAPU is a neighborhood café and bar in Athens with locations in Kypseli and Kallithea. During the day, KAPU serves coffee, pastries, sandwiches and sweets. After dark, KAPU Kypseli transitions into a cocktail bar featuring signature drinks and tiki-inspired service.",
     "finalVisitHeading": "Come through",
     "finalVisitBody": "Two corners of Athens, one KAPU. Find directions, hours, and a way to say hi."
   },
@@ -50,8 +59,10 @@
     "adultsOnlyTag": "18+",
     "abvLabel": "ABV",
     "sourceNoteCafe": "Sourced from KAPU's official takeaway menu.",
-    "sourceNoteBar": "Bar menu content is drawn from KAPU's own supplied product list; re-confirm pricing against the live Wolt/efood bar listing before publishing.",
-    "jumpToCategory": "Jump to category"
+    "sourceNoteBar": "Bar menu and pricing are provided directly by KAPU and may vary slightly from delivery-platform listings.",
+    "jumpToCategory": "Jump to category",
+    "viewLarger": "View larger photo",
+    "closeImage": "Close photo"
   },
   "locations": {
     "heading": "Find Your KAPU",
@@ -65,28 +76,41 @@
     "callCta": "Call",
     "orderHeading": "Order from here",
     "socialHeading": "Follow this KAPU",
-    "barProgramConfirmed": "Evening cocktail bar",
-    "barProgramUnconfirmed": "Evening bar program: unconfirmed for this location",
+    "barProgramConfirmed": "Coffee by day, cocktails after dark",
+    "barProgramUnconfirmed": "Coffee, food & great company",
     "barProgramNone": "Café only — no evening bar program",
     "backToLocations": "All locations",
     "viewLocation": "View this KAPU"
   },
   "order": {
-    "heading": "Order online",
+    "heading": "Order for delivery",
     "sub": "KAPU doesn't take orders on this site directly — pick a platform below.",
-    "wolt": "Order on Wolt",
-    "efood": "Order on efood",
-    "box": "Order on Box",
-    "unverified": "listing unverified — confirm before publishing",
+    "wolt": "Order with Wolt",
+    "efood": "Order with efood",
+    "box": "Order with Box",
     "chooseLocation": "Choose your KAPU",
     "choosePlatform": "Choose a platform",
     "back": "Back",
     "close": "Close"
   },
   "story": {
-    "heading": "KAPU",
-    "body": "A neighborhood place for coffee, food, drinks and good company.",
-    "pending": "The full KAPU story is coming soon — this page will grow once the people behind KAPU share it."
+    "heading": "Our Story",
+    "kicker": "About KAPU",
+    "intro": "KAPU is a neighborhood café and bar in Athens, built around one simple idea: coffee by day, cocktails after dark, always at the same easy pace.",
+    "body": "KAPU has two homes in Athens. KAPU Kypseli, on Zakinthou 9, is the original corner — a café by morning and a cocktail bar by night, with signature drinks and tiki glassware once the sun goes down. KAPU Kallithea, on Menelaou 110, brings the same coffee, food and neighborhood welcome to the other side of the city.",
+    "faqHeading": "Good to know",
+    "faq": [
+      { "q": "What is KAPU?", "a": "KAPU is a neighborhood café and bar in Athens, serving coffee, food and cocktails." },
+      { "q": "Where is KAPU?", "a": "KAPU has two locations in Athens, Greece: Kypseli and Kallithea." },
+      { "q": "How many locations does KAPU have?", "a": "Two — KAPU Kypseli and KAPU Kallithea." },
+      { "q": "Where is KAPU Kypseli?", "a": "Zakinthou 9, Athens 11361." },
+      { "q": "Where is KAPU Kallithea?", "a": "Menelaou 110, Kallithea 17676." },
+      { "q": "What does KAPU serve?", "a": "Coffee, pastries, sandwiches and sweets by day, plus signature cocktails at KAPU Kypseli after dark." },
+      { "q": "Does KAPU serve cocktails?", "a": "Yes — KAPU Kypseli serves signature cocktails after dark. An evening cocktail program at KAPU Kallithea is not yet confirmed." },
+      { "q": "Does KAPU deliver?", "a": "Yes, through third-party delivery platforms — availability varies slightly by location." },
+      { "q": "Which delivery platforms does KAPU use?", "a": "Wolt, efood and Box, where confirmed for each location." },
+      { "q": "What are KAPU's opening hours?", "a": "KAPU Kypseli: Mon–Sun 07:00–21:00. KAPU Kallithea: Mon–Sun 07:00–20:00." }
+    ]
   },
   "footer": {
     "tagline": "Πάμε #kapu να τα πούμε;",
@@ -97,7 +121,7 @@
     "designedBy": "Designed by"
   },
   "placeholder": {
-    "labelPrefix": "Photo coming soon",
-    "temporary": "Placeholder — real photography pending"
+    "labelPrefix": "New photography",
+    "temporary": "Photos for this spot are being finalized."
   }
 }

@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 /**
  * BEAT 1 — the true full-bleed hero the Creative Reset calls for: one
@@ -47,6 +47,7 @@ export default function FullBleedHero({
   alt,
   mobileSrc,
   kicker,
+  heading,
   greekPhrase,
   englishTranslation,
   locale,
@@ -66,6 +67,15 @@ export default function FullBleedHero({
   /** Dedicated portrait photo shown below the md breakpoint (767px). */
   mobileSrc: string;
   kicker: string;
+  /**
+   * CRO fix: the real semantic <h1> — plain-language, immediately explains
+   * what KAPU is ("Coffee by day. Cocktails after dark."). The Greek
+   * tagline below it stays a genuine brand element (it's on the physical
+   * mural inside KAPU Kypseli), but a first-time visitor shouldn't have to
+   * translate a Greek pun to understand the business, so it's no longer
+   * the page's only heading-level text.
+   */
+  heading: string;
   greekPhrase: string;
   englishTranslation?: string;
   locale: "en" | "el";
@@ -161,11 +171,18 @@ export default function FullBleedHero({
       />
       <div className="relative z-10 w-full px-5 pb-14 pt-32 md:px-12 md:pb-20 lg:px-16">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">{kicker}</p>
-        <h1 lang="el" className="font-display mt-4 max-w-3xl text-[13vw] leading-[1.0] text-white md:text-6xl lg:text-7xl">
-          {greekPhrase}
+        {/* CRO fix — the real H1. Plain language, states the business in
+            five words, no translation required. */}
+        <h1 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+          {heading}
         </h1>
+        {/* The Greek tagline stays a genuine, visible brand element — just a
+            supporting line now, not the page's only heading. */}
+        <p lang="el" className="font-display mt-4 max-w-2xl text-2xl leading-tight text-white/90 md:text-3xl">
+          {greekPhrase}
+        </p>
         {locale === "en" && englishTranslation && (
-          <p className="font-display mt-3 max-w-md text-2xl text-white/90 md:text-3xl" style={{ fontFamily: "Majesty, ui-serif, Georgia, serif" }}>
+          <p className="mt-1 max-w-md text-sm italic text-white/70 md:text-base">
             {englishTranslation}
           </p>
         )}

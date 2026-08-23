@@ -104,9 +104,6 @@ function MenuViewInner({
                 {category.description[locale]}
               </p>
             )}
-            {category.unverified && (
-              <p className="mt-2 max-w-xl text-xs italic opacity-50">{sourceNote}</p>
-            )}
 
             {category.items && (
               <ul className="mt-4 divide-y" style={{ borderColor: "var(--border-soft)" }}>

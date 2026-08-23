@@ -4,13 +4,14 @@ import Link from "next/link";
 import { getSiteDict, getLocations, getBarMenu } from "@/lib/content";
 import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { pageAlternates } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site";
 import ModeSection from "@/components/ModeSection";
 import Placeholder from "@/components/placeholders/Placeholder";
 import WobbleDivider from "@/components/motifs/WobbleDivider";
 import Bougainvillea from "@/components/motifs/Bougainvillea";
 import LocationCard from "@/components/locations/LocationCard";
 import OrderButtons from "@/components/order/OrderButtons";
-import OrderTriggerButton from "@/components/order/OrderTriggerButton";
+import RatingBadge from "@/components/order/RatingBadge";
 import FullBleedHero from "@/components/home/FullBleedHero";
 import CinematicBand from "@/components/home/CinematicBand";
 
@@ -27,9 +28,33 @@ export async function generateMetadata({
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getSiteDict(locale);
   return {
-    title: dict.meta.siteName,
+    // Absolute, not templated — this exact string is the brief's specified
+    // homepage <title>; the layout's title.template (which appends
+    // " — KAPU — Athens" to every other page) would otherwise double up
+    // the "KAPU — Athens" already present in this title.
+    title: { absolute: dict.meta.homeTitle },
     description: dict.meta.defaultDescription,
     alternates: pageAlternates(locale, ""),
+    openGraph: { title: dict.meta.homeTitle, description: dict.meta.defaultDescription },
+  };
+}
+
+/**
+ * Site-level Organization JSON-LD — one entity per site (only rendered on
+ * the homepage), separate from each location's own LocalBusiness entity in
+ * app/[locale]/locations/[slug]/page.tsx. Only confirmed, real values:
+ * the site's own logo file, and each location's own verified social links
+ * as sameAs. No fabricated founding date, no invented rating.
+ */
+function organizationJsonLd(locale: Locale, locations: ReturnType<typeof getLocations>) {
+  const sameAs = locations.flatMap((l) => [l.social.instagram, l.social.facebook]).filter(Boolean);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "KAPU",
+    url: `${SITE_URL}/${locale}`,
+    logo: `${SITE_URL}/images/logo/kapu-logo-full.png`,
+    ...(sameAs.length ? { sameAs } : {}),
   };
 }
 
@@ -44,6 +69,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(locale, locations)) }}
+      />
       {/* ================= BEAT 1 — FULL-BLEED HERO =================
           Phase L correction: the previous hero image (kapu-hero-sign-
           handheld.jpg) was confirmed genuinely out of focus on the live
@@ -68,22 +97,29 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         mobileSrc="/images/hero/kapu-hero-sign-handheld.jpg"
         alt="The KAPU team outside the shop, beneath the hanging KAPU sign"
         kicker={dict.home.heroKicker}
+        heading={dict.home.heroHeading}
         greekPhrase={dict.home.heroPhraseEl}
         englishTranslation={dict.home.heroPhraseTranslation}
         locale={locale}
         sub={dict.home.heroSub}
       >
-        <OrderTriggerButton
+        {/* CRO fix — hero CTAs now match the brief's two clearest first-time
+            intents (see the menu / find a location) instead of three
+            competing actions. Ordering has its own dedicated section
+            further down the page, plus the persistent nav/mobile-bar Order
+            control. */}
+        <Link
+          href={`${base}/menu`}
           className="kapu-button inline-flex min-h-[44px] items-center px-6 py-3 text-sm font-semibold tracking-wide text-white hover:opacity-90"
           style={{ backgroundColor: "var(--kapu-teal-deep)" }}
         >
-          {dict.order.heading}
-        </OrderTriggerButton>
+          {dict.home.heroMenuCta}
+        </Link>
         <Link
-          href={`${base}/menu`}
+          href={`${base}/locations`}
           className="kapu-button inline-flex min-h-[44px] items-center border-2 border-white/70 px-6 py-3 text-sm font-semibold tracking-wide text-white hover:bg-white/10"
         >
-          {dict.home.menuPreviewCta}
+          {dict.home.heroLocationsCta}
         </Link>
       </FullBleedHero>
 
@@ -377,7 +413,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </ModeSection>
       )}
 
-      {/* ================= ORDER CTA — day, cream panel. ================= */}
+      {/* ================= ORDERING SECTION — day, cream panel. =================
+          CRO fix: this used to be a single generic "Order online" button
+          that opened the quick-pick modal. The brief asks for the real
+          platforms exposed directly, grouped by location, so a visitor can
+          see and click straight through without an extra step — only
+          platforms KAPU has actually confirmed (OrderButtons already
+          filters to `verified` links) are shown, real URLs only. */}
       <ModeSection mode="day" className="relative overflow-hidden border-t" style={{ backgroundColor: "var(--panel)" }}>
         <div className="relative mx-auto max-w-3xl px-5 py-20 text-center md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-60">{dict.home.orderEyebrow}</p>
@@ -385,14 +427,70 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {dict.home.orderHeading}
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm opacity-70">{dict.home.orderBody}</p>
-          <div className="mt-8 flex justify-center">
-            <OrderTriggerButton
-              className="kapu-button inline-flex min-h-[44px] items-center px-8 py-3 text-sm font-semibold tracking-wide text-white hover:opacity-90"
-              style={{ backgroundColor: "var(--kapu-teal-deep)" }}
-            >
-              {dict.home.orderHeading}
-            </OrderTriggerButton>
+          <div className="mx-auto mt-10 grid max-w-xl gap-8 text-left sm:grid-cols-2">
+            {locations.map((location) => (
+              <div key={location.slug}>
+                <p className="text-lg font-semibold" style={{ color: "var(--accent)" }}>
+                  {location.name}
+                </p>
+                <p className="mt-1 text-xs opacity-60">{location.neighborhood[locale]}</p>
+                <div className="mt-3">
+                  <OrderButtons location={location} dict={dict} />
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </ModeSection>
+
+      {/* ================= TRUST SECTION — day, mint. =================
+          Real aggregate ratings only (Box/efood/Google — all client-
+          supplied numbers, already used on /order), never invented
+          testimonials or star counts. Individual review quotes are
+          intentionally not included here — no real quotes/reviewer names
+          exist in the project yet; see the delivery report's "Remaining
+          content needed" section rather than a placeholder shown to
+          visitors. */}
+      <ModeSection mode="day" className="relative border-t">
+        <div className="relative mx-auto max-w-3xl px-5 py-20 text-center md:py-24">
+          <h2 className="font-display text-3xl md:text-4xl" style={{ color: "var(--accent)" }}>
+            {dict.home.trustHeading}
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-sm opacity-70">{dict.home.trustBody}</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <RatingBadge label="Google" rating="4.7" count={338} locale={locale} />
+            <RatingBadge label="efood" rating="4.9" count={1944} locale={locale} />
+            <RatingBadge label="Box" rating="4.8" count={3084} locale={locale} />
+          </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs">
+            {locations.map((location) => (
+              <a
+                key={location.slug}
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.mapsQuery)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline decoration-2 underline-offset-4 hover:opacity-70"
+                style={{ color: "var(--brand)", textDecorationColor: "var(--brand)" }}
+              >
+                {location.name} — {dict.home.trustReviewsCta} ↗
+              </a>
+            ))}
+          </div>
+        </div>
+      </ModeSection>
+
+      {/* ================= ABOUT KAPU — AEO/entity clarity — day, cream panel. =================
+          Short, factual, machine-readable summary of what KAPU is — every
+          sentence traceable to confirmed data elsewhere on this site (two
+          locations, hours, addresses, confirmed vs. unconfirmed bar
+          program). No invented history; the fuller version lives on the
+          Story page. */}
+      <ModeSection mode="day" className="relative border-t" style={{ backgroundColor: "var(--panel)" }}>
+        <div className="relative mx-auto max-w-2xl px-5 py-16 text-center md:py-20">
+          <h2 className="font-display text-2xl md:text-3xl" style={{ color: "var(--on-surface)" }}>
+            {dict.home.aboutHeading}
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed opacity-80">{dict.home.aboutBody}</p>
         </div>
       </ModeSection>
 

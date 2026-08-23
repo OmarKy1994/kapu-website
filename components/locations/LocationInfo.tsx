@@ -20,10 +20,10 @@ export default function LocationInfo({
 }) {
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.mapsQuery)}`;
 
-  const barNote =
-    location.barProgram === "unconfirmed" || location.barProgram === false
-      ? location.barProgramNote[locale]
-      : null;
+  // Every location's barProgramNote is now real, customer-facing copy (not
+  // internal editorial reasoning), so it's safe to show regardless of
+  // whether the bar program is confirmed, unconfirmed, or absent.
+  const barNote = location.barProgramNote?.[locale] ?? null;
 
   return (
     // Phase L fix: confirmed live on the Netlify Kypseli page — this grid's

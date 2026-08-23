@@ -29,7 +29,6 @@ export interface MenuCategory {
   notes?: LocalizedString;
   adultsOnly?: boolean;
   featured?: boolean;
-  unverified?: boolean;
   items?: MenuItem[];
   subcategories?: MenuSubcategory[];
 }

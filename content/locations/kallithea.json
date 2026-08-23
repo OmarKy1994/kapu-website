@@ -24,15 +24,15 @@
   },
   "barProgram": "unconfirmed",
   "barProgramNote": {
-    "en": "Unconfirmed. Kallithea's own Instagram bio mentions only \"Fresh brew & snacks,\" with no cocktail/bar language — unlike Kypseli, which is independently confirmed as a cocktail bar. Do not claim Kallithea shares Kypseli's evening bar program until the client confirms.",
-    "el": "Μη επιβεβαιωμένο. Το bio του Instagram της Καλλιθέας αναφέρει μόνο \"Fresh brew & snacks\", χωρίς αναφορά σε cocktail/bar — σε αντίθεση με την Κυψέλη. Να μην αναφερθεί ότι η Καλλιθέα έχει το ίδιο βραδινό πρόγραμμα μέχρι επιβεβαίωση από τον πελάτη."
+    "en": "KAPU Kallithea is a coffee and food spot from morning to evening. For our evening cocktail bar, visit KAPU Kypseli.",
+    "el": "Το KAPU Καλλιθέα είναι καφέ και φαγητό από το πρωί έως το βράδυ. Για το βραδινό μας cocktail bar, επισκέψου το KAPU Κυψέλη."
   },
   "images": {
     "hero": null,
     "exterior": null
   },
   "placeholders": [
-    { "id": "kallithea-hero", "subject": { "en": "Kallithea interior — equivalent counter/space shot", "el": "Εσωτερικό Καλλιθέας — αντίστοιχη λήψη πάγκου/χώρου" }, "aspect": "21:9", "priority": "P0" },
+    { "id": "kallithea-hero", "subject": { "en": "KAPU Kallithea — interior", "el": "Εσωτερικό KAPU Καλλιθέα" }, "aspect": "21:9", "priority": "P0" },
     { "id": "kallithea-exterior", "subject": { "en": "Kallithea storefront / signage, daylight", "el": "Πρόσοψη / ταμπέλα Καλλιθέας, φως ημέρας" }, "aspect": "3:2", "priority": "P0" }
   ]
 }

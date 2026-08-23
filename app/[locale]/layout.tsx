@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { locales, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { getSiteDict } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
 import { notFound } from "next/navigation";
 import Nav from "@/components/nav/Nav";
 import MobileNav from "@/components/nav/MobileNav";
@@ -26,7 +27,12 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale: Locale = isLocale(raw) ? raw : defaultLocale;
   const dict = getSiteDict(locale);
+  // The real KAPU storefront/team photo already used as the homepage hero —
+  // a genuine site photo, not a fabricated social-share graphic, used as
+  // the fallback OG/Twitter image for any page that doesn't set its own.
+  const ogImage = `${SITE_URL}/images/hero/kapu-staff-team-exterior.jpg`;
   return {
+    metadataBase: new URL(SITE_URL),
     title: { default: dict.meta.siteName, template: `%s — ${dict.meta.titleSuffix}` },
     description: dict.meta.defaultDescription,
     alternates: {
@@ -34,8 +40,16 @@ export async function generateMetadata({
     },
     openGraph: {
       siteName: dict.meta.siteName,
+      description: dict.meta.defaultDescription,
       locale: locale === "el" ? "el_GR" : "en_US",
       type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: dict.meta.siteName }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.siteName,
+      description: dict.meta.defaultDescription,
+      images: [ogImage],
     },
   };
 }

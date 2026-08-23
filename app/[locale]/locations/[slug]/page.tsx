@@ -13,11 +13,16 @@ import Bougainvillea from "@/components/motifs/Bougainvillea";
 import type { LocationData } from "@/lib/types";
 
 /**
- * LocalBusiness (CafeOrCoffeeShop) JSON-LD from the same verified location
- * data the page renders — no invented ratings/review counts, ever. Hours
+ * LocalBusiness (CafeOrCoffeeShop, + BarOrPub where confirmed) JSON-LD from
+ * the same verified location data the page renders — no invented ratings,
+ * review counts, or GPS coordinates, ever (see coordinatesNote in the
+ * source JSON — coordinates stay null until independently verified). Hours
  * are the one supplied string per location, applied to every day (that is
  * what "Mon–Sun 07:00–21:00" means); nothing here goes further than what
- * content/locations/*.json already states.
+ * content/locations/*.json already states. `@type` only includes BarOrPub
+ * for a location whose evening cocktail program is actually confirmed
+ * (barProgram === true) — Kallithea stays CafeOrCoffeeShop only while its
+ * bar program is unconfirmed.
  */
 function locationJsonLd(location: LocationData, locale: Locale) {
   const [openTime, closeTime] = location.hours.en.split(" ").pop()?.split("–") ?? [];
@@ -25,7 +30,7 @@ function locationJsonLd(location: LocationData, locale: Locale) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
+    "@type": location.barProgram === true ? ["CafeOrCoffeeShop", "BarOrPub"] : "CafeOrCoffeeShop",
     name: location.name,
     url: `${SITE_URL}/${locale}/locations/${location.slug}`,
     address: {
@@ -35,6 +40,8 @@ function locationJsonLd(location: LocationData, locale: Locale) {
       addressCountry: "GR",
     },
     telephone: location.phone,
+    ...(location.images.hero ? { image: `${SITE_URL}${location.images.hero}` } : {}),
+    hasMenu: `${SITE_URL}/${locale}/menu`,
     ...(openTime && closeTime
       ? {
           openingHoursSpecification: {
@@ -68,16 +75,39 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
-  const dict = getSiteDict(locale);
   const location = getLocation(slug);
   if (!location) return {};
+
+  // Unique per-location metadata (brief-specified copy). Cocktails/bar
+  // service are only mentioned for a location whose evening bar program is
+  // actually confirmed (Kypseli) — Kallithea's description stays café-only
+  // until that's confirmed, matching locationJsonLd's same barProgram gate.
+  const isEn = locale === "en";
+  const title =
+    location.slug === "kypseli"
+      ? isEn
+        ? "KAPU Kypseli | Café & Cocktail Bar in Kypseli, Athens"
+        : "KAPU Κυψέλη | Café & Cocktail Bar στην Κυψέλη, Αθήνα"
+      : isEn
+        ? "KAPU Kallithea | Café in Kallithea, Athens"
+        : "KAPU Καλλιθέα | Café στην Καλλιθέα, Αθήνα";
+  const description =
+    location.slug === "kypseli"
+      ? isEn
+        ? `Visit KAPU Kypseli at ${location.address}. Discover coffee, food, cocktails, opening hours, directions and delivery options.`
+        : `Επισκέψου το KAPU Κυψέλη στη διεύθυνση ${location.address}. Ανακάλυψε καφέ, φαγητό, cocktails, ωράριο, διαδρομή και επιλογές delivery.`
+      : isEn
+        ? `Visit KAPU Kallithea at ${location.address}. Discover coffee, food, opening hours, directions and delivery options.`
+        : `Επισκέψου το KAPU Καλλιθέα στη διεύθυνση ${location.address}. Ανακάλυψε καφέ, φαγητό, ωράριο, διαδρομή και επιλογές delivery.`;
+
   return {
-    // Phase L fix: see menu/page.tsx — the layout's title.template already
-    // appends the suffix once; this page previously appended it a second
-    // time (e.g. "KAPU Kypseli — KAPU — Athens — KAPU — Athens").
-    title: location.name,
-    description: `${location.address} · ${location.hours[locale]}`,
+    // Absolute — these are the brief's exact specified titles; the
+    // layout's title.template would otherwise append a redundant second
+    // "KAPU — Athens" onto a title that already ends in "Athens".
+    title: { absolute: title },
+    description,
     alternates: pageAlternates(locale, `/locations/${slug}`),
+    openGraph: { title, description },
   };
 }
 
@@ -132,7 +162,6 @@ export default async function LocationPage({
               locale={locale}
               labelPrefix={dict.placeholder.labelPrefix}
               temporaryLabel={dict.placeholder.temporary}
-              priority={heroPlaceholder.priority}
             />
           )
         )}
@@ -178,7 +207,6 @@ export default async function LocationPage({
                 locale={locale}
                 labelPrefix={dict.placeholder.labelPrefix}
                 temporaryLabel={dict.placeholder.temporary}
-                priority={exteriorPlaceholder.priority}
                 className="max-w-md"
               />
             </div>
